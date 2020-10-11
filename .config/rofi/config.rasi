@@ -1,10 +1,9 @@
 configuration {
     width: 60;
-    modi: "run,demnu,ssh";
+    modi: "run,ssh";
     lines: 12;
     columns: 3;
-    font: "JetBrains Mono Regular Nerd Font Complete Mono 8";
     location: 0;
     padding: 18;
-    theme: "myrofitheme";
+    theme: "onedark";
 }
