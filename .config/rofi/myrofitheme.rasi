@@ -1,0 +1,9 @@
+* {
+    background-color: #2f343fd9;
+    text-color: #d8dee8;
+    border-color: #2f343f;
+}
+
+element selected {
+    background-color: #bf616a;
+}

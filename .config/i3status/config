@@ -6,48 +6,117 @@
 # ß
 # If the above line is not correctly displayed, fix your editor first!
 
+# general {
+#         colors = true
+#         interval = 5
+# }
+# 
+# order += "ipv6"
+# order += "wireless _first_"
+# order += "ethernet _first_"
+# order += "battery all"
+# order += "disk /"
+# order += "load"
+# order += "memory"
+# order += "tztime local"
+# 
+# wireless _first_ {
+#         format_up = "W: (%quality at %essid) %ip"
+#         format_down = "W: down"
+# }
+# 
+# ethernet _first_ {
+#         format_up = "E: %ip (%speed)"
+#         format_down = "E: down"
+# }
+# 
+# battery all {
+#         format = "%status %percentage %remaining"
+# }
+# 
+# disk "/" {
+#         format = "%avail"
+# }
+# 
+# load {
+#         format = "%1min"
+# }
+# 
+# memory {
+#         format = "%used | %available"
+#         threshold_degraded = "1G"
+#         format_degraded = "MEMORY < %available"
+# }
+# 
+# tztime local {
+#         format = "%Y-%m-%d %H:%M:%S"
+# }
+
+# Custom i3status
 general {
-        colors = true
-        interval = 5
+        output_format = "i3bar"
+        colors = false
+        markup = pango
+        interval = 1
 }
 
-order += "ipv6"
-order += "wireless _first_"
-order += "ethernet _first_"
-order += "battery all"
-order += "disk /"
 order += "load"
+order += "cpu_temperature 0"
+order += "disk /"
 order += "memory"
+order += "ethernet _first_"
+order += "wireless _first_"
+order += "volume master"
+order += "battery 0"
 order += "tztime local"
 
-wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+load {
+        format = "<span background='#f59335'>  %5min Load </span>"
 }
 
-ethernet _first_ {
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
-}
-
-battery all {
-        format = "%status %percentage %remaining"
+cpu_temperature 0 {
+        format = "<span background='#bf616a'>  %degrees °C </span>"
+        path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
 disk "/" {
-        format = "%avail"
-}
-
-load {
-        format = "%1min"
+        format = "<span background='#fec7cd'>  %free Free </span>"
 }
 
 memory {
-        format = "%used | %available"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+        format = "<span background='#a1d569'>  %percentaged_used Used </span>"
+}
+
+ethernet _first_ {
+        format_up = "<span background='#88c0d0'>  %ip </span>"
+        format_down = "<span background='#88c0d0'>  Disconnected </span>"
+}
+
+wireless _first_ {
+        format_up = "<span background='#b48ead'> 直 %essid </span>"
+        format_down = "<span background='#b48ead'> 睊 Disconnected </span>"
+}
+
+volume master {
+        format = "<span background='#ebcb8b'> 墳 %volume </span>"
+        format_muted = "<span background='#ebcb8b'> ﱝ Muted </span>"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+battery 0 {
+	last_full_capacity = true
+        format = "<span background='#a3be8c'>  %status %percentage </span>"
+        format_down = "No Battery"
+        status_chr = "Charging"
+        status_bat = "Battery"
+        status_unk = "Unknown"
+        status_full = "Charged"
+        path = "/sys/class/power_supply/CMB%d/uevent"
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+		format = "<span background='#81a1c1'> %time </span>"
+		format_time = " %a %d %b %G %r"
 }

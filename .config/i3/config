@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango: JetBrains Mono Regular Nerd Font Complete Mono 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -176,6 +176,61 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# bar {
+#         status_command i3status
+# }
+
+# Color variables
+set $red-color                  #bf616a
+set $yellow-color               #ebcb8b
+set $gray-color 	        #2f343f
+set $light-gray-color           #4b5262
+set $white-color                #d8dee8
+
+# Custom keybinds
+bindsym $mod+space      exec rofi -show run
+bindsym $mod+t exec     ranger
+bindsym $mod+g exec     google-chrome
+bindsym $mod+c exec     code
+
+bindsym $mod+equal              gaps outer current minus 5
+bindsym $mod+minus              gaps outer current plus 5
+bindsym $mod+Shift+equal        gaps inner current minus 5
+bindsym $mod+Shift+minus        gaps inner current plus 5
+bindsym $mod+zero               gaps outer current set 5; gaps inner current set 10
+
+bindsym XF86MonBrightnessUp exec xbacklight + 10
+bindsym XF86MonBrightnessDown exec xbacklight - 10
+
+# i3-gaps configuration
+for_window [class=".*"] border pixel 0
+gaps inner 10
+gaps outer 5
+
+# Set custom start jobs
+exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
+exec_always --no-startup-id picom -b
+
+# Custom i3 bar
 bar {
-        status_command i3status
-}
+    colors {
+    background  $white-color
+    statusline  $white-color
+    separator   #light-gray-color
+
+    # Workspace colors  border          background      text
+    focused_workspace   $gray-color     $red-color      $white-color
+    active_workspace    $gray-color     $gray-color     $white-color
+    inactive_workspace  $gray-color     $gray-color     $white-color
+    urgent_workspace    $gray-color     $yellow-color   #gray-color
+    }
+    status_command i3status
+}   
+
+# Window colors                 border          background      text            indicator       child_border
+client.focused                  $red-color      $gray-color     $white-color    $gray-color     $white-color
+client.unfocused                $gray-color     $gray-color     $white-color    $white-color    $white-color
+client.focused_inactive         $gray-color     $gray-color     $white-color    $white-color    $white-color
+client.urgent                   $gray-color     $gray-color     $white-color    $white-color    $white-color
+client.placeholder              $gray-color     $gray-color     $white-color    $white-color    $white-color
+client.background               #gray-color
