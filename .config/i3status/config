@@ -84,7 +84,7 @@ disk "/" {
 }
 
 memory {
-        format = "<span background='#a1d569'>  %percentaged_used Used </span>"
+        format = "<span background='#a1d569'>  %used Used </span>"
 }
 
 ethernet _first_ {
@@ -113,7 +113,6 @@ battery 0 {
         status_bat = "Battery"
         status_unk = "Unknown"
         status_full = "Charged"
-        path = "/sys/class/power_supply/CMB%d/uevent"
 }
 
 tztime local {

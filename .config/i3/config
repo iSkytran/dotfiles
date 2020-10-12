@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: JetBrains Mono Regular Nerd Font Complete Mono 8
+font pango: JetBrainsMono Nerd Font Mono 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -92,10 +92,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+z floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+z focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -183,7 +183,7 @@ bindsym $mod+r mode "resize"
 # Color variables
 set $red-color                  #bf616a
 set $yellow-color               #ebcb8b
-set $gray-color 	        #2f343f
+set $gray-color 	            #2f343f
 set $light-gray-color           #4b5262
 set $white-color                #d8dee8
 
@@ -197,7 +197,7 @@ bindsym $mod+equal              gaps outer current minus 5
 bindsym $mod+minus              gaps outer current plus 5
 bindsym $mod+Shift+equal        gaps inner current minus 5
 bindsym $mod+Shift+minus        gaps inner current plus 5
-bindsym $mod+zero               gaps outer current set 5; gaps inner current set 10
+bindsym $mod+o                  gaps outer current set 5; gaps inner current set 10
 
 bindsym XF86MonBrightnessUp exec xbacklight + 10
 bindsym XF86MonBrightnessDown exec xbacklight - 10
@@ -214,8 +214,8 @@ exec_always --no-startup-id picom -b
 # Custom i3 bar
 bar {
     colors {
-    background  $white-color
-    statusline  $white-color
+    background  $gray-color
+    statusline  $gray-color
     separator   #light-gray-color
 
     # Workspace colors  border          background      text
