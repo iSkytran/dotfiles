@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 let g:airline_theme='onedark'
+let g:airline_powerline_fonts = 1
 
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
@@ -28,7 +29,6 @@ Plug 'dense-analysis/ale'
 
 call plug#end()
 
-set noshowmode
 set nocompatible
 filetype indent plugin on
 syntax on
