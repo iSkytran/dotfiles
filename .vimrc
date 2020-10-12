@@ -5,9 +5,9 @@ let g:airline_theme='onedark'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
-Plug 'airblade/vim-gitgutter.git'
+Plug 'airblade/vim-gitgutter'
 
-Plug 'jiangmiao/auto-pairs.git'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'preservim/nerdtree'
 
@@ -20,7 +20,7 @@ Plug 'mileszs/ack.vim'
 
 Plug 'tpope/vim-surround'
 
-Plug 'colors/onedark.vim'
+Plug 'joshdick/onedark.vim'
 
 Plug 'sheerun/vim-polyglot'
 
