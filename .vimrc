@@ -1,8 +1,6 @@
 call plug#begin('~/.vim/plugged')
-Plug 'itchyny/lightline.vim'
-let g:lightline = {
-      \ 'colorscheme': 'one dark',
-      \ }
+Plug 'vim-airline/vim-airline'
+let g:airline_theme='onedark'
 
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
@@ -21,6 +19,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
 Plug 'tpope/vim-surround'
+
+Plug 'colors/onedark.vim'
+
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -49,3 +51,4 @@ set notimeout ttimeout ttimeoutlen=200
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+colorscheme onedark
