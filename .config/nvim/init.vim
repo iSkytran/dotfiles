@@ -28,6 +28,7 @@ set noshowmode
 " Quality of life options
 set hidden
 set mouse=a
+set clipboard^=unnamed,unnamedplus
 
 " Search options
 set ignorecase
@@ -42,8 +43,6 @@ set softtabstop=4
 set shiftwidth=4
 
 " Keybindings
-noremap <leader>p "+p
-noremap <leader>P "+P
 noremap <leader>h <C-w>h
 noremap <leader>j <C-w>j
 noremap <leader>k <C-w>k
