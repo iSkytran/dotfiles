@@ -33,9 +33,6 @@ set wildmenu
 set wildmode=full
 
 " Theme options
-if has('termguicolors')
-    set termguicolors
-endif
 set background=dark
 colorscheme gruvbox-material
 
