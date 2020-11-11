@@ -116,3 +116,7 @@ bindkey -v
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Created by `userpath` on 2020-11-11 21:12:42
+export PATH="$PATH:/home/entran/.local/bin"
+
