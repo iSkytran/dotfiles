@@ -67,6 +67,18 @@
                 "name": "ROSEnv",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "//wsl$/ROSEnv/home/entran"
+            },
+            {
+                "guid": "{d9752748-113d-4772-8167-01c02dfe04e2}",
+                "hidden": false,
+                "name": "RedVelvet",
+                "commandline": "ssh pi@redvelvet"
+            },
+            {
+                "guid": "{7e8daa4e-bdb0-4dca-b454-945343c24a14}",
+                "hidden": false,
+                "name": "CottonCandy",
+                "commandline": "ssh entran@cottoncandy"
             }
         ]
     },
