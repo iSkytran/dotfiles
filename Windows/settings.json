@@ -55,18 +55,22 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "guid": "{4ca8ed26-bae9-4aaa-a99f-213bb2580b99}",
                 "hidden": false,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Ubuntu/home/entran"
+                "name": "CakeBatter-Allspice",
+                "commandline": "ssh entran@cakebatter-allspice"
             },
             {
-                "guid": "{215718e5-465b-5b75-ba0c-5d35053b63b2}",
+                "guid": "{889dc38e-d6df-4c9b-93c3-97c00a06d488}",
                 "hidden": false,
-                "name": "ROSEnv",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/ROSEnv/home/entran"
+                "name": "CakeBatter-Basil",
+                "commandline": "ssh entran@cakebatter-basil"
+            },
+            {
+                "guid": "{4f8b6b68-7a9d-425b-88b0-a665d43fe704}",
+                "hidden": false,
+                "name": "CakeBatter-Cilantro",
+                "commandline": "ssh entran@cakebatter-cilantro"
             },
             {
                 "guid": "{d9752748-113d-4772-8167-01c02dfe04e2}",
