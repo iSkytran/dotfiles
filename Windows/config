@@ -1,0 +1,12 @@
+Host CakeBatter-Allspice
+    HostName cakebatter-basil
+    User entran
+Host CakeBatter-Basil
+    HostName cakebatter-basil
+    User entran
+Host RedVelvet
+    HostName redvelvet
+    User pi
+Host CottonCandy
+    HostName cottoncandy
+    User entran
