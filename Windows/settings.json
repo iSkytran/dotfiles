@@ -67,12 +67,6 @@
                 "commandline": "ssh entran@cakebatter-basil"
             },
             {
-                "guid": "{4f8b6b68-7a9d-425b-88b0-a665d43fe704}",
-                "hidden": false,
-                "name": "CakeBatter-Cilantro",
-                "commandline": "ssh entran@cakebatter-cilantro"
-            },
-            {
                 "guid": "{d9752748-113d-4772-8167-01c02dfe04e2}",
                 "hidden": false,
                 "name": "RedVelvet",
