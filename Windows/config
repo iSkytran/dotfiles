@@ -6,7 +6,7 @@ Host CakeBatter-Basil
     User entran
 Host RedVelvet
     HostName redvelvet
-    User pi
+    User entran
 Host CottonCandy
     HostName cottoncandy
     User entran
