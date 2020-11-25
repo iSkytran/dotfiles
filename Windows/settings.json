@@ -67,17 +67,18 @@
                 "commandline": "ssh entran@cakebatter-basil"
             },
             {
-                "guid": "{d9752748-113d-4772-8167-01c02dfe04e2}",
-                "hidden": false,
-                "name": "RedVelvet",
-                "commandline": "ssh entran@redvelvet"
-            },
-            {
                 "guid": "{7e8daa4e-bdb0-4dca-b454-945343c24a14}",
                 "hidden": false,
                 "name": "CottonCandy",
                 "commandline": "ssh entran@cottoncandy"
+            },
+            {
+                "guid": "{d9752748-113d-4772-8167-01c02dfe04e2}",
+                "hidden": false,
+                "name": "RedVelvet",
+                "commandline": "ssh pi@redvelvet"
             }
+            
         ]
     },
 

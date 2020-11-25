@@ -4,9 +4,9 @@ Host CakeBatter-Allspice
 Host CakeBatter-Basil
     HostName cakebatter-basil
     User entran
-Host RedVelvet
-    HostName redvelvet
-    User entran
 Host CottonCandy
     HostName cottoncandy
     User entran
+Host RedVelvet
+    HostName redvelvet
+    User pi
