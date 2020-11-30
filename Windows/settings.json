@@ -55,6 +55,12 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
+                "guid": "{0240fedd-d893-4b49-a2f0-16c5543d8a81}",
+                "hidden": false,
+                "name": "CakeBatter",
+                "commandline": "ssh rizci@cakebatter"
+            },
+            {
                 "guid": "{4ca8ed26-bae9-4aaa-a99f-213bb2580b99}",
                 "hidden": false,
                 "name": "CakeBatter-Allspice",
