@@ -1,3 +1,6 @@
+Host CakeBatter
+    HostName cakebatter
+    user rizci
 Host CakeBatter-Allspice
     HostName cakebatter-allspice
     User entran
