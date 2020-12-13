@@ -1,7 +1,7 @@
 " Plugin install
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
-Plug 'sainnhe/gruvbox-material'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
@@ -40,9 +40,9 @@ if has('termguicolors')
 	set termguicolors
 endif
 set background=dark
-colorscheme gruvbox-material
+colorscheme palenight
 
 " Airline options
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'gruvbox_material'
+let g:airline_theme = 'palenight'
