@@ -77,14 +77,7 @@
                 "hidden": false,
                 "name": "CottonCandy",
                 "commandline": "ssh entran@cottoncandy"
-            },
-            {
-                "guid": "{d9752748-113d-4772-8167-01c02dfe04e2}",
-                "hidden": false,
-                "name": "RedVelvet",
-                "commandline": "ssh pi@redvelvet"
             }
-            
         ]
     },
 

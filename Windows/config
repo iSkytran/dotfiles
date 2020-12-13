@@ -10,6 +10,3 @@ Host CakeBatter-Basil
 Host CottonCandy
     HostName cottoncandy
     User entran
-Host RedVelvet
-    HostName redvelvet
-    User pi
