@@ -1,0 +1,23 @@
+[user]
+	name = Ethan Tran
+	email = rizcielbleu@gmail.com
+[alias]
+	hist = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	hs = hist -16
+	st = status --short --branch
+	d = diff
+	p = push
+	l = pull
+	cl = clone --recurse-submodules
+	a = add --verbose --all
+	ae = add --edit --all
+	c = commit
+	cm = commit --message
+	ca = commit --add
+	cam = commit --add --message
+	ce = commit --amend
+	cen = commit --amend --no-edit
+	co = checkout
+	cob = checkout --branch
+	sw = switch
+	rs = restore
