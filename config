@@ -10,12 +10,12 @@ Host CakeBatter-Basil
 Host CottonCandy
     HostName cottoncandy.lan
     User entran
-Host Cakebatter-School
+Host Cakebatter-NCSU
     HostName cakebatter.rh.ncsu.edu
     User entran
-Host Cakebatter-Allspice-School
+Host Cakebatter-Allspice-NCSU
     HostName cakebatter-allspice.rh.ncsu.edu
     User entran
-Host Cakebatter-Basil-School
+Host Cakebatter-Basil-NCSU
     HostName cakebatter-basil.rh.ncsu.edu
     User entran
