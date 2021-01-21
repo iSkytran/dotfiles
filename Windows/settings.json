@@ -73,6 +73,12 @@
                 "commandline": "ssh entran@cakebatter-basil.lan"
             },
             {
+                "guid": "{1b5823b9-fea2-444b-8fb1-518e02357889}",
+                "hidden": false,
+                "name": "CakeBatter-Cilantro",
+                "commandline": "ssh entran@cakebatter-cilantro.lan"
+            },
+            {
                 "guid": "{7e8daa4e-bdb0-4dca-b454-945343c24a14}",
                 "hidden": false,
                 "name": "CottonCandy",
@@ -82,19 +88,25 @@
                 "guid": "{61b6be86-918d-4637-8477-dc03a004a57f}",
                 "hidden": false,
                 "name": "CakeBatter-NCSU",
-                "commandline": "ssh rizci@cakebatter.sd.ncsu.edu"
+                "commandline": "ssh rizci@cakebatter.rd.ncsu.edu"
             },
             {
                 "guid": "{fc09e106-819b-498f-800d-8045a6b23d7f}",
                 "hidden": false,
                 "name": "CakeBatter-Allspice-NCSU",
-                "commandline": "ssh entran@cakebatter-allspice.sd.ncsu.edu"
+                "commandline": "ssh entran@cakebatter-allspice.rd.ncsu.edu"
             },
             {
                 "guid": "{091a3d69-958d-4e89-b2b9-bc49f13fc2bb}",
                 "hidden": false,
                 "name": "CakeBatter-Basil-NCSU",
-                "commandline": "ssh entran@cakebatter-basil.sd.ncsu.edu"
+                "commandline": "ssh entran@cakebatter-basil.rd.ncsu.edu"
+            },
+            {
+                "guid": "{0e0b2108-d19a-445d-96c4-3d5c2aa61105}",
+                "hidden": false,
+                "name": "CakeBatter-Cilantro",
+                "commandline": "ssh entran@cakebatter-cilantro.rd.ncsu.edu"
             }
         ]
     },
