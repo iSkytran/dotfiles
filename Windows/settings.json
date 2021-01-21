@@ -73,12 +73,6 @@
                 "commandline": "ssh entran@cakebatter-basil.lan"
             },
             {
-                "guid": "{1b5823b9-fea2-444b-8fb1-518e02357889}",
-                "hidden": false,
-                "name": "CakeBatter-Cilantro",
-                "commandline": "ssh entran@cakebatter-cilantro.lan"
-            },
-            {
                 "guid": "{7e8daa4e-bdb0-4dca-b454-945343c24a14}",
                 "hidden": false,
                 "name": "CottonCandy",
@@ -101,12 +95,6 @@
                 "hidden": false,
                 "name": "CakeBatter-Basil-NCSU",
                 "commandline": "ssh entran@cakebatter-basil.rd.ncsu.edu"
-            },
-            {
-                "guid": "{0e0b2108-d19a-445d-96c4-3d5c2aa61105}",
-                "hidden": false,
-                "name": "CakeBatter-Cilantro",
-                "commandline": "ssh entran@cakebatter-cilantro.rd.ncsu.edu"
             }
         ]
     },

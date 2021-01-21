@@ -7,9 +7,6 @@ Host CakeBatter-Allspice
 Host CakeBatter-Basil
     HostName cakebatter-basil.lan
     User entran
-Host CakeBatter-Cilantro
-    HostName cakebatter-cilantro.lan
-    User entran
 Host CottonCandy
     HostName cottoncandy.lan
     User entran
@@ -21,7 +18,4 @@ Host CakeBatter-Allspice-NCSU
     User entran
 Host CakeBatter-Basil-NCSU
     HostName cakebatter-basil.rd.ncsu.edu
-    User entran
-Host CakeBatter-Cilantro
-    HostName cakebatter-cilantro.rd.ncsu.edu
     User entran
