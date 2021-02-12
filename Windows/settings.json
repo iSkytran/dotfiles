@@ -2,38 +2,28 @@
 // It should still be usable in newer versions, but newer versions might have additional
 // settings, help text, or changes that you will not see unless you clear this file
 // and let us generate a new one for you.
-
 // To view the default settings, hold "alt" while clicking on the "Settings" button.
 // For documentation on these settings, see: https://aka.ms/terminal-documentation
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-
     // You can add more global application settings here.
     // To learn more about global settings, visit https://aka.ms/terminal-global-settings
-
     // If enabled, selections are automatically copied to your clipboard.
     "copyOnSelect": false,
-
     // If enabled, formatted data is also copied to your clipboard
     "copyFormatting": false,
-
     // A profile specifies a command to execute paired with information about how it should look and feel.
     // Each one of them will appear in the 'New Tab' dropdown,
     //   and can be invoked from the commandline with `wt.exe -p xxx`
     // To learn more about profiles, visit https://aka.ms/terminal-profile-settings
-    "profiles":
-    {
-        "defaults":
-        {
+    "profiles": {
+        "defaults": {
             // Put settings here that you want to apply to all profiles.
             "colorScheme": "Material Palenight",
             "fontFace": "FiraCode NF"
         },
-        "list":
-        [
-            
+        "list": [
             {
                 // Make changes here to the powershell.exe profile.
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -82,23 +72,22 @@
                 "guid": "{61b6be86-918d-4637-8477-dc03a004a57f}",
                 "hidden": false,
                 "name": "CakeBatter-NCSU",
-                "commandline": "ssh rizci@cakebatter.rd.ncsu.edu"
+                "commandline": "ssh rizci@cakebatter.rh.ncsu.edu"
             },
             {
                 "guid": "{fc09e106-819b-498f-800d-8045a6b23d7f}",
                 "hidden": false,
                 "name": "CakeBatter-Allspice-NCSU",
-                "commandline": "ssh entran@cakebatter-allspice.rd.ncsu.edu"
+                "commandline": "ssh entran@cakebatter-allspice.rh.ncsu.edu"
             },
             {
                 "guid": "{091a3d69-958d-4e89-b2b9-bc49f13fc2bb}",
                 "hidden": false,
                 "name": "CakeBatter-Basil-NCSU",
-                "commandline": "ssh entran@cakebatter-basil.rd.ncsu.edu"
+                "commandline": "ssh entran@cakebatter-basil.rh.ncsu.edu"
             }
         ]
     },
-
     // Add custom color schemes to this array.
     // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
     "schemes": [
@@ -124,130 +113,130 @@
             "foreground": "#c5c8c6"
         },
         {
-            "background" : "#1d2021",
-            "black" : "#665C54",
-            "blue" : "#7DAEA3",
-            "brightBlack" : "#928374",
-            "brightBlue" : "#7DAEA3",
-            "brightCyan" : "#89B482",
-            "brightGreen" : "#A9B665",
-            "brightPurple" : "#D3869B",
-            "brightRed" : "#EA6962",
-            "brightWhite" : "#D4BE98",
-            "brightYellow" : "#D8A657",
-            "cyan" : "#89B482",
-            "foreground" : "#D4BE98",
-            "green" : "#A9B665",
-            "name" : "GruvboxMaterialHardDark",
-            "purple" : "#D3869B",
-            "red" : "#EA6962",
-            "white" : "#D4BE98",
-            "yellow" : "#D8A657"
+            "background": "#1d2021",
+            "black": "#665C54",
+            "blue": "#7DAEA3",
+            "brightBlack": "#928374",
+            "brightBlue": "#7DAEA3",
+            "brightCyan": "#89B482",
+            "brightGreen": "#A9B665",
+            "brightPurple": "#D3869B",
+            "brightRed": "#EA6962",
+            "brightWhite": "#D4BE98",
+            "brightYellow": "#D8A657",
+            "cyan": "#89B482",
+            "foreground": "#D4BE98",
+            "green": "#A9B665",
+            "name": "GruvboxMaterialHardDark",
+            "purple": "#D3869B",
+            "red": "#EA6962",
+            "white": "#D4BE98",
+            "yellow": "#D8A657"
         },
         {
-            "background" : "#282828",
-            "black" : "#665C54",
-            "blue" : "#7DAEA3",
-            "brightBlack" : "#928374",
-            "brightBlue" : "#7DAEA3",
-            "brightCyan" : "#89B482",
-            "brightGreen" : "#A9B665",
-            "brightPurple" : "#D3869B",
-            "brightRed" : "#EA6962",
-            "brightWhite" : "#D4BE98",
-            "brightYellow" : "#D8A657",
-            "cyan" : "#89B482",
-            "foreground" : "#D4BE98",
-            "green" : "#A9B665",
-            "name" : "GruvboxMaterialMediumDark",
-            "purple" : "#D3869B",
-            "red" : "#EA6962",
-            "white" : "#D4BE98",
-            "yellow" : "#D8A657"
+            "background": "#282828",
+            "black": "#665C54",
+            "blue": "#7DAEA3",
+            "brightBlack": "#928374",
+            "brightBlue": "#7DAEA3",
+            "brightCyan": "#89B482",
+            "brightGreen": "#A9B665",
+            "brightPurple": "#D3869B",
+            "brightRed": "#EA6962",
+            "brightWhite": "#D4BE98",
+            "brightYellow": "#D8A657",
+            "cyan": "#89B482",
+            "foreground": "#D4BE98",
+            "green": "#A9B665",
+            "name": "GruvboxMaterialMediumDark",
+            "purple": "#D3869B",
+            "red": "#EA6962",
+            "white": "#D4BE98",
+            "yellow": "#D8A657"
         },
         {
-            "background" : "#32302F",
-            "black" : "#665C54",
-            "blue" : "#7DAEA3",
-            "brightBlack" : "#928374",
-            "brightBlue" : "#7DAEA3",
-            "brightCyan" : "#89B482",
-            "brightGreen" : "#A9B665",
-            "brightPurple" : "#D3869B",
-            "brightRed" : "#EA6962",
-            "brightWhite" : "#D4BE98",
-            "brightYellow" : "#D8A657",
-            "cyan" : "#89B482",
-            "foreground" : "#D4BE98",
-            "green" : "#A9B665",
-            "name" : "GruvboxMaterialSoftDark",
-            "purple" : "#D3869B",
-            "red" : "#EA6962",
-            "white" : "#D4BE98",
-            "yellow" : "#D8A657"
+            "background": "#32302F",
+            "black": "#665C54",
+            "blue": "#7DAEA3",
+            "brightBlack": "#928374",
+            "brightBlue": "#7DAEA3",
+            "brightCyan": "#89B482",
+            "brightGreen": "#A9B665",
+            "brightPurple": "#D3869B",
+            "brightRed": "#EA6962",
+            "brightWhite": "#D4BE98",
+            "brightYellow": "#D8A657",
+            "cyan": "#89B482",
+            "foreground": "#D4BE98",
+            "green": "#A9B665",
+            "name": "GruvboxMaterialSoftDark",
+            "purple": "#D3869B",
+            "red": "#EA6962",
+            "white": "#D4BE98",
+            "yellow": "#D8A657"
         },
         {
-            "background" : "#F9F5D7",
-            "black" : "#504945",
-            "blue" : "#45707A",
-            "brightBlack" : "#504945",
-            "brightBlue" : "#45707A",
-            "brightCyan" : "#4C7A5D",
-            "brightGreen" : "#6C782E",
-            "brightPurple" : "#945E80",
-            "brightRed" : "#C14A4A",
-            "brightWhite" : "#D4BE98",
-            "brightYellow" : "#B47109",
-            "cyan" : "#4C7A5D",
-            "foreground" : "#654735",
-            "green" : "#6C782E",
-            "name" : "GruvboxMaterialHardLight",
-            "purple" : "#945E80",
-            "red" : "#C14A4A",
-            "white" : "#D4BE98",
-            "yellow" : "#B47109"
+            "background": "#F9F5D7",
+            "black": "#504945",
+            "blue": "#45707A",
+            "brightBlack": "#504945",
+            "brightBlue": "#45707A",
+            "brightCyan": "#4C7A5D",
+            "brightGreen": "#6C782E",
+            "brightPurple": "#945E80",
+            "brightRed": "#C14A4A",
+            "brightWhite": "#D4BE98",
+            "brightYellow": "#B47109",
+            "cyan": "#4C7A5D",
+            "foreground": "#654735",
+            "green": "#6C782E",
+            "name": "GruvboxMaterialHardLight",
+            "purple": "#945E80",
+            "red": "#C14A4A",
+            "white": "#D4BE98",
+            "yellow": "#B47109"
         },
         {
-            "background" : "#fbf1c7",
-            "black" : "#504945",
-            "blue" : "#45707A",
-            "brightBlack" : "#504945",
-            "brightBlue" : "#45707A",
-            "brightCyan" : "#4C7A5D",
-            "brightGreen" : "#6C782E",
-            "brightPurple" : "#945E80",
-            "brightRed" : "#C14A4A",
-            "brightWhite" : "#D4BE98",
-            "brightYellow" : "#B47109",
-            "cyan" : "#4C7A5D",
-            "foreground" : "#654735",
-            "green" : "#6C782E",
-            "name" : "GruvboxMaterialMediumLight",
-            "purple" : "#945E80",
-            "red" : "#C14A4A",
-            "white" : "#D4BE98",
-            "yellow" : "#B47109"
+            "background": "#fbf1c7",
+            "black": "#504945",
+            "blue": "#45707A",
+            "brightBlack": "#504945",
+            "brightBlue": "#45707A",
+            "brightCyan": "#4C7A5D",
+            "brightGreen": "#6C782E",
+            "brightPurple": "#945E80",
+            "brightRed": "#C14A4A",
+            "brightWhite": "#D4BE98",
+            "brightYellow": "#B47109",
+            "cyan": "#4C7A5D",
+            "foreground": "#654735",
+            "green": "#6C782E",
+            "name": "GruvboxMaterialMediumLight",
+            "purple": "#945E80",
+            "red": "#C14A4A",
+            "white": "#D4BE98",
+            "yellow": "#B47109"
         },
         {
-            "background" : "#F2E5BC",
-            "black" : "#504945",
-            "blue" : "#45707A",
-            "brightBlack" : "#504945",
-            "brightBlue" : "#45707A",
-            "brightCyan" : "#4C7A5D",
-            "brightGreen" : "#6C782E",
-            "brightPurple" : "#945E80",
-            "brightRed" : "#C14A4A",
-            "brightWhite" : "#D4BE98",
-            "brightYellow" : "#B47109",
-            "cyan" : "#4C7A5D",
-            "foreground" : "#654735",
-            "green" : "#6C782E",
-            "name" : "GruvboxMaterialSoftLight",
-            "purple" : "#945E80",
-            "red" : "#C14A4A",
-            "white" : "#D4BE98",
-            "yellow" : "#B47109"
+            "background": "#F2E5BC",
+            "black": "#504945",
+            "blue": "#45707A",
+            "brightBlack": "#504945",
+            "brightBlue": "#45707A",
+            "brightCyan": "#4C7A5D",
+            "brightGreen": "#6C782E",
+            "brightPurple": "#945E80",
+            "brightRed": "#C14A4A",
+            "brightWhite": "#D4BE98",
+            "brightYellow": "#B47109",
+            "cyan": "#4C7A5D",
+            "foreground": "#654735",
+            "green": "#6C782E",
+            "name": "GruvboxMaterialSoftLight",
+            "purple": "#945E80",
+            "red": "#C14A4A",
+            "white": "#D4BE98",
+            "yellow": "#B47109"
         },
         {
             "name": "MaterialDark",
@@ -290,8 +279,8 @@
             "brightWhite": "#ffffff",
             "background": "#212121",
             "foreground": "#eeffff"
-          },
-          {
+        },
+        {
             "name": "Material Palenight",
             "background": "#292d3e",
             "foreground": "#a6accd",
@@ -311,27 +300,42 @@
             "red": "#ff5370",
             "white": "#ffffff",
             "yellow": "#ffcb6b"
-          }
+        }
     ],
-
     // Add custom keybindings to this array.
     // To unbind a key combination from your defaults.json, set the command to "unbound".
     // To learn more about keybindings, visit https://aka.ms/terminal-keybindings
-    "keybindings":
-    [
+    "keybindings": [
         // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
         // These two lines additionally bind them to Ctrl+C and Ctrl+V.
         // To learn more about selection, visit https://aka.ms/terminal-selection
-        { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-        { "command": "paste", "keys": "ctrl+v" },
-
+        {
+            "command": {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
         // Press Ctrl+Shift+F to open the search box
-        { "command": "find", "keys": "ctrl+shift+f" },
-
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
         // Press Alt+Shift+D to open a new pane.
         // - "split": "auto" makes this pane open in the direction that provides the most surface area.
         // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
         // To learn more about panes, visit https://aka.ms/terminal-panes
-        { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" }
+        {
+            "command": {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        }
     ]
 }

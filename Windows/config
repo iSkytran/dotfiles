@@ -11,11 +11,11 @@ Host CottonCandy
     HostName cottoncandy.lan
     User entran
 Host CakeBatter-NCSU
-    HostName cakebatter.rd.ncsu.edu
+    HostName cakebatter.rh.ncsu.edu
     User entran
 Host CakeBatter-Allspice-NCSU
-    HostName cakebatter-allspice.rd.ncsu.edu
+    HostName cakebatter-allspice.rh.ncsu.edu
     User entran
 Host CakeBatter-Basil-NCSU
-    HostName cakebatter-basil.rd.ncsu.edu
+    HostName cakebatter-basil.rh.ncsu.edu
     User entran
