@@ -45,47 +45,17 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
                 "guid": "{0240fedd-d893-4b49-a2f0-16c5543d8a81}",
-                "hidden": false,
-                "name": "CakeBatter",
-                "commandline": "ssh rizci@cakebatter.lan"
-            },
-            {
-                "guid": "{4ca8ed26-bae9-4aaa-a99f-213bb2580b99}",
-                "hidden": false,
-                "name": "CakeBatter-Allspice",
-                "commandline": "ssh entran@cakebatter-allspice.lan"
-            },
-            {
-                "guid": "{889dc38e-d6df-4c9b-93c3-97c00a06d488}",
-                "hidden": false,
-                "name": "CakeBatter-Basil",
-                "commandline": "ssh entran@cakebatter-basil.lan"
-            },
-            {
-                "guid": "{7e8daa4e-bdb0-4dca-b454-945343c24a14}",
                 "hidden": false,
                 "name": "CottonCandy",
                 "commandline": "ssh entran@cottoncandy.lan"
             },
-            {
-                "guid": "{61b6be86-918d-4637-8477-dc03a004a57f}",
-                "hidden": false,
-                "name": "CakeBatter-NCSU",
-                "commandline": "ssh rizci@cakebatter.rh.ncsu.edu"
-            },
-            {
-                "guid": "{fc09e106-819b-498f-800d-8045a6b23d7f}",
-                "hidden": false,
-                "name": "CakeBatter-Allspice-NCSU",
-                "commandline": "ssh entran@cakebatter-allspice.rh.ncsu.edu"
-            },
-            {
-                "guid": "{091a3d69-958d-4e89-b2b9-bc49f13fc2bb}",
-                "hidden": false,
-                "name": "CakeBatter-Basil-NCSU",
-                "commandline": "ssh entran@cakebatter-basil.rh.ncsu.edu"
-            }
         ]
     },
     // Add custom color schemes to this array.
