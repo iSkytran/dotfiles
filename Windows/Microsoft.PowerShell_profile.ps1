@@ -1,2 +1,2 @@
-Set-PoshPrompt -Theme robbyrussel.omp
+Set-PoshPrompt -Theme pure
 New-Alias g git
