@@ -21,7 +21,7 @@
         "defaults": {
             // Put settings here that you want to apply to all profiles.
             "colorScheme": "Material Palenight",
-            "fontFace": "FiraCode NF"
+            "fontFace": "Cascadia Code PL"
         },
         "list": [
             {
