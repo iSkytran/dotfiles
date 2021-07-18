@@ -1,3 +1,29 @@
-Host CottonCandy
+# Personal
+Host cottoncandy
     HostName cottoncandy.lan
     User entran
+
+# ARC
+Host arc
+    HostName aerialroboticsclub.com
+    User arc
+Host kraken
+    HostName 192.168.1.44
+    User arc
+    ProxyJump arc
+Host moore
+    HostName 192.168.1.60
+    User arc
+    ProxyJump arc
+Host shaver
+    HostName 192.168.1.61
+    User arc
+    ProxyJump arc
+Host pratt
+    HostName 192.168.1.62
+    User arc
+    ProxyJump arc
+Host muninn
+    HostName 192.168.1.19
+    User arc  
+    ProxyJump arc
