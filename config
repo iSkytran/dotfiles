@@ -3,6 +3,11 @@ Host cottoncandy
     HostName iskytran.com
     User entran
 
+# NCSU EOS
+Host eos
+    HostName remote.eos.ncsu.edu
+    User entran
+
 # ARC
 Host arc
     HostName aerialroboticsclub.com
