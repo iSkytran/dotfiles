@@ -27,5 +27,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # C Environmental Variables
-CPATH=/usr/local/include
-LIBRARY_PATH=/usr/local/lib
+export CPATH=/usr/local/include
+export LIBRARY_PATH=/usr/local/lib
