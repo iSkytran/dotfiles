@@ -2,6 +2,9 @@
 Host cottoncandy
     HostName iskytran.com
     User entran
+Host strawberryyogurt
+    HostName strawberryyogurt
+    User entran
 
 # NCSU EOS
 Host eos
@@ -20,15 +23,19 @@ Host moore
     HostName 192.168.1.60
     User arc
     ProxyJump arc
-Host shaver
-    HostName 192.168.1.61
+Host muninn
+    HostName 192.168.1.19
+    User arc  
+    ProxyJump arc
+Host palpapi
+    HostName 192.168.1.80
     User arc
     ProxyJump arc
 Host pratt
     HostName 192.168.1.62
     User arc
     ProxyJump arc
-Host muninn
-    HostName 192.168.1.19
-    User arc  
+Host shaver
+    HostName 192.168.1.61
+    User arc
     ProxyJump arc
