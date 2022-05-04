@@ -23,7 +23,7 @@ Host moore
     HostName 192.168.1.60
     User arc
     ProxyJump arc
-Host muninn
+Host twoninn
     HostName 192.168.1.19
     User arc  
     ProxyJump arc
