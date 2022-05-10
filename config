@@ -2,8 +2,8 @@
 Host cottoncandy
     HostName iskytran.com
     User entran
-Host strawberryyogurt
-    HostName strawberryyogurt
+Host bubbletea
+    HostName bubbletea
     User entran
 
 # NCSU EOS
