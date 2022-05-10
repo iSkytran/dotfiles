@@ -1,5 +1,6 @@
 " Visual options
 syntax enable
+set number
 set noshowmode
 
 " Quality of life options
