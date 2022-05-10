@@ -1,6 +1,5 @@
 " Visual options
 syntax enable
-set number relativenumber
 set noshowmode
 
 " Quality of life options
