@@ -15,6 +15,7 @@ Host eos
 Host arc
     HostName aerialroboticsclub.com
     User arc
+    Port 42069
 Host kraken
     HostName 192.168.1.44
     User arc
