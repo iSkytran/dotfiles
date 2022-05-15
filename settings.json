@@ -4,16 +4,22 @@
     "actions": 
     [
         {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
             "command": 
             {
                 "action": "copy",
                 "singleLine": false
-            },
-            "keys": "ctrl+c"
+            }
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "command": "paste"
         },
         {
             "command": "find",
