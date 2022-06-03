@@ -6,7 +6,6 @@ set noshowmode
 " Quality of life options
 set hidden
 set mouse=a
-set clipboard^=unnamed
 
 " Search options
 set ignorecase
