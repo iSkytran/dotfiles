@@ -10,9 +10,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Use vi mode
-bindkey -v
-
 # Enable Pure Prompt
 autoload -U promptinit; promptinit
 prompt pure
