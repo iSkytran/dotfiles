@@ -15,8 +15,8 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # Source ROS
-if [[ -f /opt/ros/melodic/setup.zsh ]]; then
-  source /opt/ros/melodic/setup.zsh
+if [[ -f /opt/ros/humble/setup.zsh ]]; then
+  source /opt/ros/humble/setup.zsh
 fi
 
 # Source NVM
