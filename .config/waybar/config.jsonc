@@ -1,5 +1,8 @@
 {
     "position": "top",
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
     "modules-left": [
         "wlr/workspaces"
     ],
@@ -86,11 +89,11 @@
         "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {time}",
         "format-full": "<span size='13000' foreground='#B1E3AD'> </span> {capacity}%",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
         ]
     },
     "clock": {
