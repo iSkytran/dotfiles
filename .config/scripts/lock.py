@@ -1,8 +1,9 @@
 import os
 import random
+import socket
 import subprocess
 
-FOLDER_PATH = "/home/entran/files/wallpapers"
+FOLDER_PATH = os.path.join("/home/entran/files/wallpapers", socket.gethostname())
 
 def main():
         wallpaper = random.choice([os.path.join(FOLDER_PATH, file) for file in os.listdir(FOLDER_PATH)])
@@ -10,4 +11,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
