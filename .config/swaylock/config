@@ -1,0 +1,87 @@
+# ░██████╗░██╗░░░░░░░██╗░█████╗░██╗░░░██╗██╗░░░░░░█████╗░░█████╗░██╗░░██╗
+# ██╔════╝░██║░░██╗░░██║██╔══██╗╚██╗░██╔╝██║░░░░░██╔══██╗██╔══██╗██║░██╔╝
+# ╚█████╗░░╚██╗████╗██╔╝███████║░╚████╔╝░██║░░░░░██║░░██║██║░░╚═╝█████═╝░
+# ░╚═══██╗░░████╔═████║░██╔══██║░░╚██╔╝░░██║░░░░░██║░░██║██║░░██╗██╔═██╗░
+# ██████╔╝░░╚██╔╝░╚██╔╝░██║░░██║░░░██║░░░███████╗╚█████╔╝╚█████╔╝██║░╚██╗
+# ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝░░░╚═╝░░░╚══════╝░╚════╝░░╚════╝░╚═╝░░╚═╝
+
+# Turn the screen into the given color instead of white
+color=303556ff
+
+# When an empty password is provided by the user, do not validate it
+ignore-empty-password
+
+# Show the number of failed authentication attempts on the indicator
+show-failed-attempts
+
+# Detach from the controlling terminal after locking
+daemonize
+
+# Sets the color of backspace highlight segments
+bs-hl-color=f2d5cdff
+
+# Sets the color of backspace highlight segments when Caps Lock is active
+# caps-lock-bs-hl-color=<rrggbb[aa]>
+
+# Sets the color of the key press highlight segments when Caps Lock is active
+# caps-lock-key-hl-color=<rrggbb[aa]>
+
+# Sets the font of the text
+font=FiraCode Nerd Font
+
+# Sets the indicator radius (default: 50)
+indicator-radius=100
+
+# Sets the indicator thickness (default: 10)
+indicator-thickness=10
+
+# Sets the color of the inside of the indicator
+inside-color=303556ff
+
+# Sets the color of the inside of the indicator when cleared
+inside-clear-color=303556ff
+
+# Sets the color of the inside of the indicator when verifying
+inside-ver-color=303556ff
+
+# Sets the color of the inside of the indicator when invalid
+inside-wrong-color=303556ff
+
+# Sets the color of key press highlight segments
+key-hl-color=a6d189ff
+
+# Sets the background color of the box containing the layout text
+layout-bg-color=c6d0f5ff
+
+# Use the ring color for the line between the inside and ring
+line-uses-ring
+
+# Sets the color of the outside of the indicator when typing or idle
+ring-color=51576dff
+
+# Sets the color of the outside of the indicator when cleared
+ring-clear-color=88c0d0ff
+
+# Sets the color of the outside of the indicator when verifying
+ring-ver-color=ef9f76ff
+
+# Sets the color of the outside of the indicator when invalid
+ring-wrong-color=ea999cff
+
+# Sets the color of the lines that separate highlight segments
+separator-color=51576dff
+
+# Sets the color of the text
+text-color=c6d0f5ff
+
+# Sets the color of the text when cleared
+text-clear-color=c6d0f5ff
+
+# Sets the color of the text when Caps Lock is active
+text-caps-lock-color=ef9f76ff
+
+# Sets the color of the text when verifying
+text-ver-color=c6d0f5ff
+
+# Sets the color of the text when invalid
+text-wrong-color=c6d0f5ff

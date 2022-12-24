@@ -1,0 +1,99 @@
+{
+    "position": "top",
+    "modules-left": [
+        "wlr/workspaces"
+    ],
+    "modules-center": [
+        "custom/spotify"
+    ],
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "clock"
+    ],
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "default": "",
+            "urgent": "",
+            "active": ""
+        },
+        "sort-by-number": true
+    },
+    "custom/spotify": {
+        "format": "<span foreground='#E5B4E2'></span><span font='FiraCode Nerd Font weight=325 Italic'> {}</span>",
+        "return-type": "json",
+        "exec-if": "pgrep spotify",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous",
+        "tooltip": false,
+        "escape": true,
+        "max-length": 60,
+        "exec": "python /home/entran/.config/scripts/mediaplayer.py --player spotify"
+    },
+    "network": {
+        "on-click": "kitty nmtui",
+        "format-wifi": "<span size='13000' foreground='#F2CECF'> </span> {essid}",
+        "format-ethernet": "<span size='13000' foreground='#F2CECF'>󰤭</span> Disconnected",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "<span size='13000' foreground='#F2CECF'></span> Disconnected"
+    },
+    "bluetooth": {
+        "on-click": "kitty bluetuith",
+        "format": " {status}",
+        "format-disabled": "",
+        "format-connected": " {num_connections} connected"
+    },
+    "pulseaudio": {
+        "on-click": "kitty pulsemixer",
+        "format": "<span size='13000' foreground='#EBDDAA'>{icon}</span> {volume}%",
+        "format-muted": "<span size='13000' foreground='#EBDDAA'></span> Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        }
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            ""
+        ]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {capacity}%",
+        "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {capacity}%",
+        "format-critical": "<span size='13000' foreground='#E38C8F'>{icon}</span> {capacity}%",
+        "format-charging": "<span size='13000' foreground='#B1E3AD'> </span> {capacity}%",
+        "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span> {capacity}%",
+        "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {time}",
+        "format-full": "<span size='13000' foreground='#B1E3AD'> </span> {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "clock": {
+        "format": "<span foreground='#C6AAE8'></span> {:%a %d %H:%M}"
+    }
+}
