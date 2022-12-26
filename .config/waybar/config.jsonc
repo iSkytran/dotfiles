@@ -20,11 +20,6 @@
     "wlr/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
-        "format-icons": {
-            "default": "",
-            "urgent": "",
-            "active": ""
-        },
         "sort-by-number": true
     },
     "custom/spotify": {
@@ -42,7 +37,7 @@
     "network": {
         "on-click": "kitty nmtui",
         "format-wifi": "<span size='13000' foreground='#F2CECF'> </span> {essid}",
-        "format-ethernet": "<span size='13000' foreground='#F2CECF'>󰤭</span> Disconnected",
+        "format-ethernet": "<span size='13000' foreground='#F2CECF'></span> Disconnected",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "<span size='13000' foreground='#F2CECF'></span> Disconnected"
     },
