@@ -1,14 +1,23 @@
-export ZSH="/home/entran/.oh-my-zsh"
-ZSH_THEME=""
-fpath+=$HOME/.oh-my-zsh/pure
+export ZSH="/usr/share/oh-my-zsh"
 
 plugins=(
+    archlinux
+    copyfile
+    copypath
+    cp
+    docker
+    docker-compose
+    extract
 	git
-	zsh-syntax-highlighting
-	zsh-autosuggestions
+    git-auto-fetch
+    man
+    pip
+    python
+    rsync
+    sudo
+    tmux
+    vscode
 )
-
-source $ZSH/oh-my-zsh.sh
 
 # Dotfile Alias
 alias config='/usr/bin/git --git-dir=$HOME/code/dotfiles/ --work-tree=$HOME'
@@ -17,11 +26,7 @@ alias config='/usr/bin/git --git-dir=$HOME/code/dotfiles/ --work-tree=$HOME'
 autoload -U promptinit; promptinit
 prompt pure
 
-# Source ROS
-if [[ -f /opt/ros/humble/setup.zsh ]]; then
-  source /opt/ros/humble/setup.zsh
-fi
+source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Source NVM
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
