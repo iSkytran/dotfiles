@@ -1,10 +1,12 @@
 import itertools
-import time
 import os
 import socket
 import subprocess
+import time
+import threading
 
 FOLDER_PATH = os.path.join("/home/entran/files/wallpapers", socket.gethostname())
+TIMER_DELAY = 0.75 
 
 def change_wallpaper(wallpaper: str):
     subprocess.call(["swww", "img", wallpaper, "--transition-duration", "1", "--transition-type", "random"])
@@ -17,10 +19,13 @@ def main():
         signature = os.getenv("HYPRLAND_INSTANCE_SIGNATURE")
         client.connect(f"/tmp/hypr/{signature}/.socket2.sock")
         fd = client.makefile()
+        timer = threading.Timer(TIMER_DELAY, change_wallpaper, next(wallpapers))
         while True:
             line = fd.readline()
             if line[0:9] == "workspace":
-                change_wallpaper(next(wallpapers))
+                timer.cancel()
+                timer = threading.Timer(TIMER_DELAY, change_wallpaper, [next(wallpapers)])
+                timer.start()
 
 if __name__ == "__main__":
     main()
