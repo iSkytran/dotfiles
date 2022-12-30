@@ -10,7 +10,11 @@ envvars = {
     "_JAVA_AWT_WM_NONREPARENTING": "1",
     "GDK_BACKEND": "wayland",
     "MOZ_DBUS_REMOTE": "1",
-    "MOZ_ENABLE_WAYLAND": "1"
+    "MOZ_ENABLE_WAYLAND": "1",
+    "GTK_IM_MODULE": "fcitx",
+    "QT_IM_MODULE": "fcitx",
+    "XMODIFIERS": "@im=null",
+    "GLFW_IM_MODULE": "ibus"
 }
 
 def main():
