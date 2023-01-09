@@ -20,7 +20,10 @@ plugins=(
 )
 
 # Dotfile Alias
-alias config='/usr/bin/git --git-dir=$HOME/code/dotfiles/ --work-tree=$HOME'
+alias config="/usr/bin/git --git-dir=$HOME/code/dotfiles/ --work-tree=$HOME"
+
+# Ensure Correct Editor
+export EDITOR="vim"
 
 # Enable Pure Prompt
 autoload -U promptinit; promptinit

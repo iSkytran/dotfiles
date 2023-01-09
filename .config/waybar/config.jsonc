@@ -48,7 +48,7 @@
         "format-connected": " {num_connections} connected"
     },
     "pulseaudio": {
-        "on-click": "kitty pulsemixer",
+        "on-click": "kitty -o confirm_os_window_close=0 pulsemixer",
         "format": "<span size='13000' foreground='#EBDDAA'>{icon}</span> {volume}%",
         "format-muted": "<span size='13000' foreground='#EBDDAA'></span> Muted",
         "format-icons": {
