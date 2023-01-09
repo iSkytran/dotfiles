@@ -7,7 +7,9 @@ lock_path = "/home/entran/.config/scripts/lock.py"
 
 def main():
     if (socket.gethostname() == "cakebatter"):
-        subprocess.call(["swayidle", "-w", "timeout", f"{lock_time}", f"'python' '{lock_path}'"])
+        subprocess.call(["swayidle", "-w", "timeout", f"{lock_time}", f"'python' '{lock_path}'",
+            "timeout", f"{suspend_time}", "'hyprctl' 'dispatch' 'dpms' 'off'",
+            "resume", "'hyprctl' 'dispatch' 'dpms' 'on'"])
     elif (socket.gethostname() == "mintchip"):
         subprocess.call(["swayidle", "-w", "timeout", f"{lock_time}", f"'python' '{lock_path}'",
             "timeout", f"{suspend_time}", "'systemctl' 'suspend'",
