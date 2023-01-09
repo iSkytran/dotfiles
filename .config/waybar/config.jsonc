@@ -35,14 +35,14 @@
         "exec": "python /home/entran/.config/scripts/mediaplayer.py --player spotify"
     },
     "network": {
-        "on-click": "kitty nmtui",
+        "on-click": "kitty -o confirm_os_window_close=0 nmtui",
         "format-wifi": "<span size='13000' foreground='#F2CECF'> </span> {essid}",
         "format-ethernet": "<span size='13000' foreground='#F2CECF'></span> Disconnected",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "<span size='13000' foreground='#F2CECF'></span> Disconnected"
     },
     "bluetooth": {
-        "on-click": "kitty bluetuith",
+        "on-click": "kitty -o confirm_os_window_close=0 bluetuith",
         "format": " {status}",
         "format-disabled": "",
         "format-connected": " {num_connections} connected"
