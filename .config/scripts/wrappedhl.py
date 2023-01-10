@@ -1,4 +1,5 @@
 import os
+import socket
 import subprocess
 
 envvars = {
@@ -18,6 +19,8 @@ envvars = {
 }
 
 def main():
+    if (socket.gethostname() == "cakebatter"):
+        envvars["VDPAU_DRIVER"] = "radeonsi"
     for key, value in envvars.items():
         os.environ[key] = value
     subprocess.call(["Hyprland"])
