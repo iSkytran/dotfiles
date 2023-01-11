@@ -9,11 +9,11 @@ FOLDER_PATH = os.path.join("/home/entran/files/wallpapers", socket.gethostname()
 TIMER_DELAY = 0.75 
 
 def change_cakebatter_wallpaper(left_wallpaper: str, right_wallpaper: str):
-    subprocess.call(["swww", "img", "-o", "DP-3", left_wallpaper, "--transition-duration", "1", "--transition-type", "random"])
-    subprocess.call(["swww", "img", "-o", "DP-4", right_wallpaper, "--transition-duration", "1", "--transition-type", "random"])
+    subprocess.run(["swww", "img", "-o", "DP-3", left_wallpaper, "--transition-duration", "1", "--transition-type", "random"])
+    subprocess.run(["swww", "img", "-o", "DP-4", right_wallpaper, "--transition-duration", "1", "--transition-type", "random"])
 
 def change_mintchip_wallpaper(wallpaper: str):
-    subprocess.call(["swww", "img", wallpaper, "--transition-duration", "1", "--transition-type", "random"])
+    subprocess.run(["swww", "img", wallpaper, "--transition-duration", "1", "--transition-type", "random"])
 
 def main():
     time.sleep(1)

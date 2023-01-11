@@ -23,8 +23,7 @@ def main():
         envvars["VDPAU_DRIVER"] = "radeonsi"
     for key, value in envvars.items():
         os.environ[key] = value
-    subprocess.call(["Hyprland"])
+    subprocess.run(["Hyprland"])
 
 if __name__ == "__main__":
     main()
-
