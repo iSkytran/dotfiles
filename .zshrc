@@ -19,8 +19,9 @@ plugins=(
     vscode
 )
 
-# Dotfile Alias
+# Aliases
 alias config="/usr/bin/git --git-dir=$HOME/code/dotfiles/ --work-tree=$HOME"
+alias rm=trash
 
 # Ensure Correct Editor
 export EDITOR="vim"
