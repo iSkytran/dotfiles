@@ -2,7 +2,7 @@ import socket
 import subprocess
 
 lock_time = 300
-suspend_time = 500
+suspend_time = 600
 lock_path = "/home/entran/.config/scripts/lock.py"
 
 def main():
