@@ -1,97 +1,126 @@
 {
     "position": "top",
-    "margin-top": 5,
-    "margin-left": 5,
-    "margin-right": 5,
+    "layer": "top",
     "modules-left": [
-        "wlr/workspaces"
+        "custom/rofi",
+        "wlr/workspaces",
+        "custom/spotify"
     ],
     "modules-center": [
-        "custom/spotify"
+        "hyprland/window"
     ],
     "modules-right": [
         "network",
         "bluetooth",
         "pulseaudio",
         "backlight",
+        "cpu",
+        "memory",
         "battery",
-        "clock"
+        "clock",
+        "custom/power"
     ],
+    "custom/rofi": {
+        "format": "",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
     "wlr/workspaces": {
         "format": "{icon}",
-        "on-click": "activate",
-        "sort-by-number": true
+        "on-click": "activate"
     },
     "custom/spotify": {
-        "format": "<span foreground='#E5B4E2'></span><span font='FiraCode Nerd Font weight=325 Italic'> {}</span>",
-        "return-type": "json",
+        "format": " {}",
+        "max-length": 40,
+        "exec": "playerctl metadata -F -f '{{title}} - {{artist}}'",
         "exec-if": "pgrep spotify",
-        "on-click": "playerctl -p spotify play-pause",
-        "on-scroll-up": "playerctl -p spotify next",
-        "on-scroll-down": "playerctl -p spotify previous",
-        "tooltip": false,
-        "escape": true,
-        "max-length": 60,
-        "exec": "python /home/entran/.config/scripts/mediaplayer.py --player spotify"
+        "tooltip": false
+    },
+    "hyprland/window": {
+        "separate-outputs": true,
+        "max-length": 60
     },
     "network": {
         "on-click": "kitty -o confirm_os_window_close=0 nmtui",
-        "format-wifi": "<span size='13000' foreground='#F2CECF'> </span> {essid}",
-        "format-ethernet": "<span size='13000' foreground='#F2CECF'></span> Disconnected",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "<span size='13000' foreground='#F2CECF'></span> Disconnected"
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ifname}",
+        "format-linked": "爵 {ifname}",
+        "format-disconnected": "爵 Disconnected",
+        "tooltip-format": "{ipaddr}"
     },
     "bluetooth": {
         "on-click": "kitty -o confirm_os_window_close=0 bluetuith",
-        "format": " {status}",
-        "format-disabled": "",
-        "format-connected": " {num_connections} connected"
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias} {device_address}"
     },
     "pulseaudio": {
         "on-click": "kitty -o confirm_os_window_close=0 pulsemixer",
-        "format": "<span size='13000' foreground='#EBDDAA'>{icon}</span> {volume}%",
-        "format-muted": "<span size='13000' foreground='#EBDDAA'></span> Muted",
+        "format": "{icon} {volume}%",
+        "states": {
+            "warning": 85
+        },
+        "format-muted": "婢 Muted",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": [
+                "",
                 "",
-                ""
+                " "
             ]
         }
     },
     "backlight": {
         "format": "{icon} {percent}%",
         "format-icons": [
-            "",
-            ""
+            " ",
+            " ",
+            " ",
+            " "
         ]
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "on-click": "kitty -o confirm_os_window_close=0 htop",
+        "states": {
+            "warning": 85
+        }
+    },
+    "memory": {
+        "format": "﬙ {percentage}%",
+        "on-click": "kitty -o confirm_os_window_close=0 htop",
+        "states": {
+            "warning": 85
+        }
     },
     "battery": {
         "states": {
-            "warning": 30,
-            "critical": 15
+            "warning": 20,
+            "critical": 10,
         },
-        "format": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {capacity}%",
-        "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {capacity}%",
-        "format-critical": "<span size='13000' foreground='#E38C8F'>{icon}</span> {capacity}%",
-        "format-charging": "<span size='13000' foreground='#B1E3AD'> </span> {capacity}%",
-        "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span> {capacity}%",
-        "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon}</span> {time}",
-        "format-full": "<span size='13000' foreground='#B1E3AD'> </span> {capacity}%",
+        "format": "{icon} {capacity}%",
         "format-icons": [
-            " ",
-            " ",
-            " ",
-            " ",
-            " "
-        ]
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%"
     },
     "clock": {
-        "format": "<span foreground='#C6AAE8'></span> {:%a %d %H:%M}"
+        "format": "{:%a %b %d %H:%M}",
+        "tooltip-format": "{calendar}",
+        "on-scroll": {
+            "calendar": 1
+        }
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "rofi -show power-menu -modi power-menu:rofi-power-menu",
+        "tooltip": false
     }
 }
