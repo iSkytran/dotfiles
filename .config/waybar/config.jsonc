@@ -125,9 +125,12 @@
     },
     "clock": {
         "format": "{:%a %b %d %H:%M}",
-        "tooltip-format": "{calendar}",
+        "tooltip-format": "{:%B %Y\t%H:%M:%S}\n{calendar}",
+        "calendar-weeks-pos": "right",
+        "format-calendar-weeks": "W{:%V}",
+        "interval": 1,
         "on-scroll": {
-            "calendar": 1
+            "calendar": -1
         }
     },
     "custom/power": {
