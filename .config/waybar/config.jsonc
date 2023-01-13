@@ -22,6 +22,7 @@
         "battery",
         "network",
         "bluetooth",
+        "idle_inhibitor",
         "clock",
         "custom/power"
     ],
@@ -47,23 +48,6 @@
     "hyprland/window": {
         "separate-outputs": true,
         "max-length": 60
-    },
-    "network": {
-        "format-wifi": "",
-        "format-ethernet": "",
-        "format-linked": "爵",
-        "format-disconnected": "爵 Disconnected",
-        "tooltip-format-ethernet": "{ifname} {ipaddr}",
-        "tooltip-format-wifi": "{essid} {ifname} {ipaddr}",
-        "on-click": "kitty -o confirm_os_window_close=0 nmtui"
-    },
-    "bluetooth": {
-        "format": "",
-        "format-on": "",
-        "format-connected": "",
-        "tooltip-format-connected": "{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias} {device_address}",
-        "on-click": "kitty -o confirm_os_window_close=0 bluetuith"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -122,6 +106,30 @@
         ],
         "format-full": "{icon} {capacity}%",
         "format-charging": " {capacity}%"
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-linked": "爵",
+        "format-disconnected": "爵 Disconnected",
+        "tooltip-format-ethernet": "{ifname} {ipaddr}",
+        "tooltip-format-wifi": "{essid} {ifname} {ipaddr}",
+        "on-click": "kitty -o confirm_os_window_close=0 nmtui"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-on": "",
+        "format-connected": "",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias} {device_address}",
+        "on-click": "kitty -o confirm_os_window_close=0 bluetuith"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
     "clock": {
         "format": "{:%a %b %d %H:%M}",

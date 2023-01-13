@@ -78,6 +78,7 @@ window#waybar {
 #battery,
 #network,
 #bluetooth,
+#idle_inhibitor,
 #clock,
 #custom-power {
   padding-left: 8px;
@@ -130,6 +131,10 @@ window#waybar {
 
 #bluetooth {
   color: @sapphire;
+}
+
+#idle_inhibitor {
+  color: @rosewater;
 }
 
 #clock {
