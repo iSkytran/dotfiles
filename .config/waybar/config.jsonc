@@ -15,6 +15,8 @@
     "modules-right": [
         "cpu",
         "memory",
+        "disk#root",
+        "disk#home",
         "pulseaudio",
         "backlight",
         "battery",
@@ -25,8 +27,8 @@
     ],
     "custom/launcher": {
         "format": "",
-        "on-click": "rofi -show drun",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "rofi -show drun"
     },
     "wlr/workspaces": {
         "format": "{icon}",
@@ -37,34 +39,34 @@
         "max-length": 40,
         "exec": "playerctl metadata -F -f '{{title}} - {{artist}}'",
         "exec-if": "pgrep spotify",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next"
     },
     "hyprland/window": {
         "separate-outputs": true,
         "max-length": 60
     },
     "network": {
-        "on-click": "kitty -o confirm_os_window_close=0 nmtui",
         "format-wifi": "",
         "format-ethernet": "",
         "format-linked": "爵",
         "format-disconnected": "爵 Disconnected",
-        "tooltip-format": "{essid} {ifname} {ipaddr}"
+        "tooltip-format-ethernet": "{ifname} {ipaddr}",
+        "tooltip-format-wifi": "{essid} {ifname} {ipaddr}",
+        "on-click": "kitty -o confirm_os_window_close=0 nmtui"
     },
     "bluetooth": {
-        "on-click": "kitty -o confirm_os_window_close=0 bluetuith",
         "format": "",
         "format-on": "",
         "format-connected": "",
         "tooltip-format-connected": "{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias} {device_address}"
+        "tooltip-format-enumerate-connected": "{device_alias} {device_address}",
+        "on-click": "kitty -o confirm_os_window_close=0 bluetuith"
     },
     "pulseaudio": {
-        "on-click": "kitty -o confirm_os_window_close=0 pulsemixer",
         "format": "{icon} {volume}%",
-        "states": {
-            "warning": 85
-        },
         "format-muted": "婢 Muted",
         "format-icons": {
             "default": [
@@ -72,7 +74,11 @@
                 "",
                 " "
             ]
-        }
+        },
+        "on-click-left": "kitty -o confirm_os_window_close=0 pulsemixer",
+        "on-click-right": "pulsemixer --toggle-mute",
+        "on-scroll-up": "pulsemixer --change-volume +2",
+        "on-scroll-down": "pulsemixer --change-volume -2"
     },
     "backlight": {
         "format": "{icon} {percent}%",
@@ -81,27 +87,27 @@
             " ",
             " ",
             " "
-        ]
+        ],
+        "on-scroll-up": "xbacklight -inc 10",
+        "on-scroll-down": "xbacklight -dec 10"
     },
     "cpu": {
         "format": " {usage}%",
-        "on-click": "kitty -o confirm_os_window_close=0 htop",
-        "states": {
-            "warning": 85
-        }
+        "on-click": "kitty -o confirm_os_window_close=0 htop"
     },
     "memory": {
         "format": "﬙ {percentage}%",
-        "on-click": "kitty -o confirm_os_window_close=0 htop",
-        "states": {
-            "warning": 85
-        }
+        "on-click": "kitty -o confirm_os_window_close=0 htop"
+    },
+    "disk#root": {
+        "format": " {percentage_used}%",
+        "path": "/"
+    },
+    "disk#home": {
+        "format": " {percentage_used}%",
+        "path": "/home"
     },
     "battery": {
-        "states": {
-            "warning": 20,
-            "critical": 10,
-        },
         "format": "{icon} {capacity}%",
         "format-icons": [
             "",
@@ -125,8 +131,8 @@
         }
     },
     "custom/power": {
-        "format": " ",
         "on-click": "rofi -show power-menu -modi power-menu:rofi-power-menu",
+        "format": " ",
         "tooltip": false
     }
 }

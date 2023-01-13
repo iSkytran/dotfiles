@@ -39,7 +39,7 @@
 
 window#waybar {
   border-radius: 8;
-  background-color: alpha(@base, 0.85)
+  background-color: alpha(@base, 0.85);
 }
 
 #custom-launcher {
@@ -71,6 +71,8 @@ window#waybar {
 #window,
 #cpu,
 #memory,
+#disk.root,
+#disk.home,
 #pulseaudio,
 #backlight,
 #battery,
@@ -78,54 +80,62 @@ window#waybar {
 #bluetooth,
 #clock,
 #custom-power {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #custom-launcher {
-  color: @blue
+  color: @blue;
 }
 
 #custom-spotify {
-  color: @green
+  color: @green;
 }
 
 #workspaces {
-  color: @text
-}
-
-#memory {
-  color: @teal
-}
-
-#backlight {
-  color: @yellow
-}
-
-#pulseaudio {
-  color: @flamingo
+  color: @text;
 }
 
 #cpu {
-  color: @maroon
+  color: @maroon;
+}
+
+#memory {
+  color: @teal;
+}
+
+#disk.root {
+  color: @flamingo;
+}
+
+#disk.home {
+  color: @flamingo;
+}
+
+#pulseaudio {
+  color: @pink;
+}
+
+#backlight {
+  color: @yellow;
 }
 
 #battery {
-  color: @green
+  color: @green;
 }
 
 #network {
-  color: @lavender
+  color: @lavender;
 }
 
 #bluetooth {
-  color: @sapphire
+  color: @sapphire;
 }
 
 #clock {
-  color: @text
+  color: @text;
 }
 
 #custom-power {
-  color: @red
+  color: @red;
 }
