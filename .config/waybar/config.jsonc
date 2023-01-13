@@ -1,8 +1,11 @@
 {
     "position": "top",
     "layer": "top",
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
     "modules-left": [
-        "custom/rofi",
+        "custom/launcher",
         "wlr/workspaces",
         "custom/spotify"
     ],
@@ -20,7 +23,7 @@
         "clock",
         "custom/power"
     ],
-    "custom/rofi": {
+    "custom/launcher": {
         "format": "",
         "on-click": "rofi -show drun",
         "tooltip": false
@@ -42,14 +45,17 @@
     },
     "network": {
         "on-click": "kitty -o confirm_os_window_close=0 nmtui",
-        "format-wifi": " {essid}",
-        "format-ethernet": " {ifname}",
-        "format-linked": "爵 {ifname}",
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-linked": "爵",
         "format-disconnected": "爵 Disconnected",
-        "tooltip-format": "{ipaddr}"
+        "tooltip-format": "{essid} {ifname} {ipaddr}"
     },
     "bluetooth": {
         "on-click": "kitty -o confirm_os_window_close=0 bluetuith",
+        "format": "",
+        "format-on": "",
+        "format-connected": "",
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias} {device_address}"
     },
@@ -119,7 +125,7 @@
         }
     },
     "custom/power": {
-        "format": "",
+        "format": " ",
         "on-click": "rofi -show power-menu -modi power-menu:rofi-power-menu",
         "tooltip": false
     }
