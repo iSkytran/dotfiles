@@ -69,13 +69,13 @@ window#waybar {
 #workspaces,
 #custom-spotify,
 #window,
-#network,
-#bluetooth,
-#pulseaudio,
-#backlight,
 #cpu,
 #memory,
+#pulseaudio,
+#backlight,
 #battery,
+#network,
+#bluetooth,
 #clock,
 #custom-power {
   padding-left: 10px;
@@ -94,12 +94,12 @@ window#waybar {
   color: @text
 }
 
-#network {
-  color: @green
+#memory {
+  color: @teal
 }
 
-#bluetooth {
-  color: @sapphire
+#backlight {
+  color: @yellow
 }
 
 #pulseaudio {
@@ -110,16 +110,16 @@ window#waybar {
   color: @maroon
 }
 
-#memory {
-  color: @teal
-}
-
-#backlight {
-  color: @yellow
-}
-
 #battery {
   color: @green
+}
+
+#network {
+  color: @lavender
+}
+
+#bluetooth {
+  color: @sapphire
 }
 
 #clock {
