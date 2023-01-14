@@ -59,7 +59,7 @@
                 " "
             ]
         },
-        "on-click-left": "kitty -o confirm_os_window_close=0 pulsemixer",
+        "on-click": "kitty -o confirm_os_window_close=0 pulsemixer",
         "on-click-right": "pulsemixer --toggle-mute",
         "on-scroll-up": "pulsemixer --change-volume +2",
         "on-scroll-down": "pulsemixer --change-volume -2"

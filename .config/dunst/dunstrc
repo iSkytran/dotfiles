@@ -4,6 +4,8 @@ separator_color = frame
 corner_radius = 10
 follow = mouse
 font = "FiraCode Nerd Font 12"
+mouse_left = do_action
+middle = close_current
 
 [urgency_low]
 background = "#303446"
@@ -17,4 +19,3 @@ foreground = "#C6D0F5"
 background = "#303446"
 foreground = "#C6D0F5"
 frame_color = "#EF9F76"
-
