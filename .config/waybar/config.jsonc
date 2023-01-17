@@ -111,7 +111,7 @@
         "format-wifi": "",
         "format-ethernet": "",
         "format-linked": "爵",
-        "format-disconnected": "爵 Disconnected",
+        "format-disconnected": "爵",
         "tooltip-format-ethernet": "{ifname} {ipaddr}",
         "tooltip-format-wifi": "{essid} {ifname} {ipaddr}",
         "on-click": "kitty -o confirm_os_window_close=0 nmtui"
