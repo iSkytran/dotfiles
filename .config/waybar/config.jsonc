@@ -42,8 +42,8 @@
         "exec-if": "pgrep spotify",
         "tooltip": false,
         "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl previous",
-        "on-scroll-down": "playerctl next"
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     },
     "hyprland/window": {
         "separate-outputs": true,
@@ -138,7 +138,7 @@
         "format-calendar-weeks": "W{:%V}",
         "interval": 1,
         "on-scroll": {
-            "calendar": -1
+            "calendar": 1
         }
     },
     "custom/power": {
