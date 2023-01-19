@@ -17,7 +17,7 @@ def next_wallpaper(wallpapers: itertools.cycle) -> list[tuple[str, str]]:
     if (socket.gethostname() == "cakebatter"):
         return [("DP-3", next(wallpapers)), ("DP-4", next(wallpapers))]
     elif (socket.gethostname() == "mintchip"):
-        return [("eDP-1", next(wallpapers))]
+        return [("eDP-1", next(wallpapers)), ("DP-1", next(wallpapers))]
     else:
         raise Exception("Not a known device.")
 
