@@ -22,3 +22,5 @@
 	cob = checkout --branch
 	sw = switch
 	rs = restore
+[init]
+	defaultBranch = main
