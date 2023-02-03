@@ -1,0 +1,5 @@
+import:
+    - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+window:
+    decorations: None
+
