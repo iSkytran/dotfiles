@@ -1,3 +1,8 @@
+# Function for Sourcing
+function test_source {
+    test -f "$1" && source "$1"
+}
+
 export ZSH="/usr/share/oh-my-zsh"
 
 plugins=(
@@ -31,12 +36,12 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # Source Plugins
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+test_source $ZSH/oh-my-zsh.sh
+test_source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+test_source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Python Virtual Environments
+# Virtual Environments
 export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper_lazy.sh
-source /usr/share/nvm/init-nvm.sh
+test_source /usr/bin/virtualenvwrapper_lazy.sh
+test_source /usr/share/nvm/init-nvm.sh
 
