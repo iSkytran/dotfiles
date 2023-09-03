@@ -24,7 +24,7 @@ var layout = {
                     "ToolBoxButtonY": "27"
                 },
                 "/Wallpaper/org.kde.slideshow/General": {
-                    "Image": "file:///home/entran/files/wallpapers/cakebatter/027.png",
+                    "Image": "file:///home/entran/files/wallpapers/cakebatter/000.png",
                     "SlidePaths": "/home/entran/files/wallpapers/cakebatter/"
                 }
             },
