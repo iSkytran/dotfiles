@@ -31,9 +31,8 @@ alias rm=trash
 # Ensure Correct Editor
 export EDITOR="vim"
 
-# Enable Pure Prompt
-autoload -U promptinit; promptinit
-prompt pure
+# Activate Starship Prompt
+eval "$(starship init zsh)"
 
 # Source Plugins
 test_source $ZSH/oh-my-zsh.sh
