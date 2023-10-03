@@ -32,7 +32,7 @@ require('lazy').setup({
   {
     'ggandor/leap.nvim',
     dependencies = {
-      -- Required for dot-repeats to work correctly 
+      -- Required for dot-repeats to work correctly
       'tpope/vim-repeat',
     },
   },
@@ -163,6 +163,15 @@ require('lazy').setup({
     },
   },
 
+  -- File browser extension
+  {
+    'nvim-telescope/telescope-file-browser.nvim',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim'
+    },
+  },
+
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -241,6 +250,7 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
+    initial_mode = "normal",
   },
 }
 
@@ -265,6 +275,7 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
+vim.keymap.set('n', '<leader>fb', require('telescope').extensions.file_browser.file_browser, { desc = '[F]ile [B]rowser' })
 
 -- [[ Configure Treesitter ]]
 require('nvim-treesitter.configs').setup {
@@ -463,4 +474,3 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
