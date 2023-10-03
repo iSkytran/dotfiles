@@ -212,6 +212,9 @@ vim.o.termguicolors = true
 -- [[ Basic Keymaps ]]
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+-- Terminal normal mode
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -374,6 +377,7 @@ end
 
 -- Enable the following language servers
 local servers = {
+  bashls = {},
   clangd = {},
   gopls = {},
   pyright = {},
