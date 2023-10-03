@@ -252,6 +252,17 @@ require('telescope').setup {
     },
     initial_mode = "normal",
   },
+  pickers = {
+    buffers = {
+      sort_mru = true,
+    },
+  },
+  extensions = {
+    file_browser = {
+      -- Disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+    },
+  },
 }
 
 -- Enable telescope fzf native, if installed
@@ -275,7 +286,8 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
-vim.keymap.set('n', '<leader>fb', require('telescope').extensions.file_browser.file_browser, { desc = '[F]ile [B]rowser' })
+vim.keymap.set('n', '<leader>fb', require('telescope').extensions.file_browser.file_browser,
+  { desc = '[F]ile [B]rowser' })
 
 -- [[ Configure Treesitter ]]
 require('nvim-treesitter.configs').setup {
