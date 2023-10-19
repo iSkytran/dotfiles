@@ -59,7 +59,6 @@ require('lazy').setup({
   {
     'kylechui/nvim-surround',
     version = '*',
-    event = 'VeryLazy',
     config = function()
       require('nvim-surround').setup()
     end
@@ -120,8 +119,8 @@ require('lazy').setup({
     name = 'catppuccin',
     priority = 1000,
     config = function()
-      require("catppuccin").setup({
-        flavour = "frappe"
+      require('catppuccin').setup({
+        flavour = 'frappe'
       })
       vim.cmd.colorscheme 'catppuccin'
     end,
@@ -173,12 +172,12 @@ require('lazy').setup({
 
   -- File browser
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons',
+      'MunifTanjim/nui.nvim',
     }
   },
 
@@ -253,8 +252,11 @@ require('leap').add_default_mappings()
 
 -- [[ Configure Neo-tree ]]
 require('neo-tree').setup {
-  -- close_if_last_window = true,
+  close_if_last_window = true,
   enable_normal_mode_for_inputs = true,
+  filesystem = {
+    hijack_netrw_behavior = 'open_current',
+  },
 }
 vim.keymap.set('n', '<leader>fb', function () require('neo-tree.command').execute({ source = 'filesystem', toggle = true }) end, { desc = 'Open [F]ile [B]rowser' })
 
@@ -497,3 +499,4 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
