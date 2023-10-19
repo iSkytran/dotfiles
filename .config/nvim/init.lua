@@ -182,9 +182,6 @@ require('lazy').setup({
     }
   },
 
-  -- Better buffer deleting
-  'famiu/bufdelete.nvim',
-
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
