@@ -48,11 +48,21 @@ require('lazy').setup({
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
-      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
       -- Additional lua configuration
       'folke/neodev.nvim',
     },
+  },
+
+  -- Surround
+  {
+    'kylechui/nvim-surround',
+    version = '*',
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-surround').setup()
+    end
   },
 
   {
@@ -133,12 +143,8 @@ require('lazy').setup({
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
-    config = function()
-      require('ibl').setup {
-        char = '┊',
-        show_trailing_blankline_indent = false,
-      }
-    end,
+    main = 'ibl',
+    opts = {},
   },
 
   -- "gc" to comment visual regions/lines
@@ -165,14 +171,19 @@ require('lazy').setup({
     },
   },
 
-  -- File browser extension
+  -- File browser
   {
-    'nvim-telescope/telescope-file-browser.nvim',
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
     dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/plenary.nvim'
-    },
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
   },
+
+  -- Better buffer deleting
+  'famiu/bufdelete.nvim',
 
   {
     -- Highlight, edit, and navigate code
@@ -243,6 +254,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- [[ Configure Leap ]]
 require('leap').add_default_mappings()
 
+-- [[ Configure Neo-tree ]]
+require('neo-tree').setup {
+  -- close_if_last_window = true,
+  enable_normal_mode_for_inputs = true,
+}
+vim.keymap.set('n', '<leader>fb', function () require('neo-tree.command').execute({ source = 'filesystem', toggle = true }) end, { desc = 'Open [F]ile [B]rowser' })
+
 -- [[ Configure Telescope ]]
 require('telescope').setup {
   defaults = {
@@ -257,12 +275,6 @@ require('telescope').setup {
   pickers = {
     buffers = {
       sort_mru = true,
-    },
-  },
-  extensions = {
-    file_browser = {
-      -- Disables netrw and use telescope-file-browser in its place
-      hijack_netrw = true,
     },
   },
 }
@@ -289,8 +301,6 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
 vim.keymap.set('n', '<leader>ss', require('telescope.builtin').treesitter, { desc = '[S]earch [S]ymbols' })
-vim.keymap.set('n', '<leader>fb', require('telescope').extensions.file_browser.file_browser,
-  { desc = '[F]ile [B]rowser' })
 
 -- [[ Configure Treesitter ]]
 require('nvim-treesitter.configs').setup {
