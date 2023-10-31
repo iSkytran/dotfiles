@@ -24,3 +24,5 @@
 	rs = restore
 [init]
 	defaultBranch = main
+[merge]
+	tool = meld
