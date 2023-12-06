@@ -28,8 +28,9 @@ plugins=(
 alias config="/usr/bin/git --git-dir=$HOME/code/dotfiles/ --work-tree=$HOME"
 alias rm=trash
 
-# Ensure Correct Editor
+# Update Environment Variables
 export EDITOR="vim"
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
 # Activate Starship Prompt
 eval "$(starship init zsh)"
@@ -43,4 +44,3 @@ test_source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighti
 export WORKON_HOME=~/.virtualenvs
 test_source /usr/bin/virtualenvwrapper_lazy.sh
 test_source /usr/share/nvm/init-nvm.sh
-
