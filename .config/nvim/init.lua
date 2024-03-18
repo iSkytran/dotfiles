@@ -91,5 +91,25 @@ require('lazy').setup({
       require('nvim-treesitter.configs').setup({ auto_install = true, highlight = { enable = true } })
     end,
   },
+
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+      'folke/neodev.nvim',
+    },
+    config = function()
+      require('neodev').setup()
+      require('mason').setup()
+      require('mason-lspconfig').setup({
+        handlers = {
+          function(server_name)
+            require('lspconfig')[server_name].setup({})
+          end,
+        }
+      })
+    end,
+  }
 })
 
