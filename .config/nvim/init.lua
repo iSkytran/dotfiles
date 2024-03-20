@@ -2,9 +2,9 @@
 -- [[ Neovim Configuration File ]] --
 -------------------------------------
 
------------------------------------------------
--- Vim Options (Many set through MiniBasic.) --
------------------------------------------------
+-----------------
+-- Vim Options --
+-----------------
 vim.g.mapleader      = ' ' -- Space as the leader key.
 vim.g.maplocalleader = ' ' -- Space as the leader key.
 
@@ -173,6 +173,51 @@ require('lazy').setup({
     end,
   },
 
+  -- For marking files.
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
+    config = function()
+      local harpoon = require('harpoon')
+      local conf = require('telescope.config').values
+      local toggle_telescope = function(harpoon_files)
+        local make_finder = function()
+          local file_paths = {}
+          for _, item in ipairs(harpoon_files.items) do
+            table.insert(file_paths, item.value)
+          end
+
+          return require('telescope.finders').new_table({
+            results = file_paths,
+          })
+        end
+        require('telescope.pickers').new({}, {
+          prompt_title = 'Harpoon',
+          finder = make_finder(),
+          previewer = conf.file_previewer({}),
+          sorter = conf.generic_sorter({}),
+          attach_mappings = function(buffn, map)
+            map({ 'n', 'i' }, '<C-d>', function()
+              local state = require('telescope.actions.state')
+              local selection = state.get_selected_entry()
+              local current_picker = state.get_current_picker(buffn)
+
+              harpoon:list():removeAt(selection.index)
+              current_picker:refresh(make_finder())
+            end)
+            return true
+          end,
+        }):find()
+      end
+
+      harpoon.setup()
+      vim.keymap.set('n', '<leader>a', function() harpoon:list():append() end, { desc = '[A]ppend to harpoon list' })
+      vim.keymap.set('n', '<leader><leader>', function() toggle_telescope(harpoon:list()) end, { desc = '[ ] View harpoon items' })
+      vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+    end,
+  },
+
   -- Mini utilities.
   {
     'echasnovski/mini.nvim',
@@ -189,6 +234,8 @@ require('lazy').setup({
       statusline.section_location = function()
         return '%2l:%-2v'
       end
+
+      vim.keymap.set('n', '<leader>e', function() MiniFiles.open() end, { desc = 'Open file [e]xplorer' })
     end,
   },
 
@@ -226,9 +273,9 @@ require('lazy').setup({
       })
 
       -- Improved diagnostic symbols.
-      local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+      local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
       for type, icon in pairs(signs) do
-        local hl = "DiagnosticSign" .. type
+        local hl = 'DiagnosticSign' .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
       end
 
@@ -251,11 +298,11 @@ require('lazy').setup({
         end,
       })
 
-      vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+      vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         desc = 'Diagnostic message over cursor',
-        group = vim.api.nvim_create_augroup("float-diagnostic", { clear = true }),
+        group = vim.api.nvim_create_augroup('float-diagnostic', { clear = true }),
         callback = function ()
-          vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
+          vim.diagnostic.open_float(nil, { focus = false })
         end
       })
     end,
