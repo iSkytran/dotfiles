@@ -47,7 +47,7 @@ vim.opt.listchars = { tab = '→ ', trail = '•', nbsp = '␣' } -- Helper symb
 
 -- Highlighted related keymaps.
 vim.opt.hlsearch = true
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', function() vim.cmd.nohlsearch() end)
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
@@ -57,20 +57,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Save with CTRL-S.
-vim.keymap.set('n', '<C-S>', '<Cmd>silent! update | redraw<CR>', { desc = 'Save' })
-vim.keymap.set({ 'i', 'x' }, '<C-S>', '<Esc><Cmd>silent! update | redraw<CR>', { desc = 'Save and go to Normal mode' })
+vim.keymap.set('n', '<C-s>', function() vim.cmd.w() end, { desc = 'Save' })
+vim.keymap.set({ 'i', 'x' }, '<C-s>', function() vim.cmd.w() end, { desc = 'Save and go to Normal mode' })
 
 -- Toggle options.
-vim.keymap.set('n', '\\b', '<Cmd>lua vim.o.bg = vim.o.bg == "dark" and "light" or "dark"; print(vim.o.bg)<CR>',       { desc = "Toggle 'background'" })
-vim.keymap.set('n', '\\c', '<Cmd>setlocal cursorline! cursorline?<CR>',                                               { desc = "Toggle 'cursorline'" })
-vim.keymap.set('n', '\\C', '<Cmd>setlocal cursorcolumn! cursorcolumn?<CR>',                                           { desc = "Toggle 'cursorcolumn'" })
-vim.keymap.set('n', '\\h', '<Cmd>let v:hlsearch = 1 - v:hlsearch | echo (v:hlsearch ? "  " : "no") . "hlsearch"<CR>', { desc = 'Toggle search highlight' })
-vim.keymap.set('n', '\\i', '<Cmd>setlocal ignorecase! ignorecase?<CR>',                                               { desc = "Toggle 'ignorecase'" })
-vim.keymap.set('n', '\\l', '<Cmd>setlocal list! list?<CR>',                                                           { desc = "Toggle 'list'" })
-vim.keymap.set('n', '\\n', '<Cmd>setlocal number! number?<CR>',                                                       { desc = "Toggle 'number'" })
-vim.keymap.set('n', '\\r', '<Cmd>setlocal relativenumber! relativenumber?<CR>',                                       { desc = "Toggle 'relativenumber'" })
-vim.keymap.set('n', '\\s', '<Cmd>setlocal spell! spell?<CR>',                                                         { desc = "Toggle 'spell'" })
-vim.keymap.set('n', '\\w', '<Cmd>setlocal wrap! wrap?<CR>',                                                           { desc = "Toggle 'wrap'" })
+vim.keymap.set('n', '\\b', function() vim.o.bg = vim.o.bg == 'dark' and 'light' or 'dark'; print(vim.o.bg) end,                        { desc = "Toggle '[b]ackground'" })
+vim.keymap.set('n', '\\c', function() vim.bo.cursorline = not vim.bo.cursorline end,                                                   { desc = "Toggle '[c]ursorline'" })
+vim.keymap.set('n', '\\C', function() vim.bo.cursorcolumn = not vim.bo.cursorcolumn end,                                               { desc = "Toggle '[C]ursorcolumn'" })
+vim.keymap.set('n', '\\h', function() vim.o.hlsearch = not vim.o.hlsearch; print((vim.o.hlsearch and '  ' or 'no') .. 'hlsearch') end, { desc = 'Toggle search [h]ighlight' })
+vim.keymap.set('n', '\\i', function() vim.o.ignorecase = not vim.o.ignorecase end,                                                     { desc = "Toggle '[i]gnorecase'" })
+vim.keymap.set('n', '\\l', function() vim.bo.list = not vim.bo.list end,                                                               { desc = "Toggle '[l]ist'" })
+vim.keymap.set('n', '\\n', function() vim.bo.number = not vim.bo.number end,                                                           { desc = "Toggle '[n]umber'" })
+vim.keymap.set('n', '\\r', function() vim.bo.relativenumber = not vim.bo.relativenumber end,                                           { desc = "Toggle '[r]elativenumber'" })
+vim.keymap.set('n', '\\s', function() vim.bo.spell = not vim.bo.spell end,                                                             { desc = "Toggle '[s]pell'" })
+vim.keymap.set('n', '\\w', function() vim.bo.wrap = not vim.bo.wrap end,                                                               { desc = "Toggle '[w]rap'" })
 
 -- Window navigation
 vim.keymap.set('n', '<C-H>', '<C-w>h', { desc = 'Focus on left window' })
@@ -78,11 +78,11 @@ vim.keymap.set('n', '<C-J>', '<C-w>j', { desc = 'Focus on below window' })
 vim.keymap.set('n', '<C-K>', '<C-w>k', { desc = 'Focus on above window' })
 vim.keymap.set('n', '<C-L>', '<C-w>l', { desc = 'Focus on right window' })
 
--- Window resize (respecting `v:count`)
-vim.keymap.set('n', '<C-Left>',  '"<Cmd>vertical resize -" . v:count1 . "<CR>"', { expr = true, replace_keycodes = false, desc = 'Decrease window width' })
-vim.keymap.set('n', '<C-Down>',  '"<Cmd>resize -"          . v:count1 . "<CR>"', { expr = true, replace_keycodes = false, desc = 'Decrease window height' })
-vim.keymap.set('n', '<C-Up>',    '"<Cmd>resize +"          . v:count1 . "<CR>"', { expr = true, replace_keycodes = false, desc = 'Increase window height' })
-vim.keymap.set('n', '<C-Right>', '"<Cmd>vertical resize +" . v:count1 . "<CR>"', { expr = true, replace_keycodes = false, desc = 'Increase window width' })
+-- Window resize (respecting `v:count`).
+vim.keymap.set('n', '<C-Left>',  function() vim.api.nvim_win_set_width(0, vim.api.nvim_win_get_width(0) - vim.v.count1) end, { desc = 'Decrease window width' })
+vim.keymap.set('n', '<C-Down>',  function() vim.api.nvim_win_set_height(0, vim.api.nvim_win_get_height(0) - vim.v.count1) end, { desc = 'Decrease window height' })
+vim.keymap.set('n', '<C-Up>',  function() vim.api.nvim_win_set_height(0, vim.api.nvim_win_get_height(0) + vim.v.count1) end, { desc = 'Increase window height' })
+vim.keymap.set('n', '<C-Right>',  function() vim.api.nvim_win_set_width(0, vim.api.nvim_win_get_width(0) + vim.v.count1) end, { desc = 'Increase window width' })
 
 -- Move only sideways in command mode. Using `silent = false` makes movements to be immediately shown.
 vim.keymap.set('c', '<M-h>', '<Left>',  { silent = false, desc = 'Left' })
@@ -137,6 +137,19 @@ require('lazy').setup({
     init = function()
       vim.cmd.colorscheme 'catppuccin-mocha'
     end,
+  },
+
+  {
+    'folke/flash.nvim',
+    event = 'VeryLazy',
+    opts = {},
+    keys = {
+      { 's', mode = { 'n', 'x', 'o' }, function() require('flash').jump() end, desc = 'Flash' },
+      { 'S', mode = { 'n', 'x', 'o' }, function() require('flash').treesitter() end, desc = 'Flash Treesitter' },
+      { 'r', mode = 'o', function() require('flash').remote() end, desc = 'Remote Flash' },
+      { 'R', mode = { 'o', 'x' }, function() require('flash').treesitter_search() end, desc = 'Treesitter Search' },
+      { '\\f', mode = { 'c' }, function() require('flash').toggle(); end, desc = "Toggle '[F]lash'" },
+    },
   },
 
   -- Telescope fuzzy finder.
@@ -227,7 +240,20 @@ require('lazy').setup({
       require('mini.completion').setup()
       require('mini.files').setup()
       require('mini.pairs').setup()
-      require('mini.surround').setup()
+      require('mini.surround').setup({
+        mappings = {
+          add = '<leader>sa',
+          delete = '<leader>sd',
+          find = '<leader>sf',
+          find_left = '<leader>sF',
+          highlight = '<leader>sh',
+          replace = '<leader>sr',
+          update_n_lines = '<leader>sn',
+
+          suffix_last = '<leader>l',
+          suffix_next = '<leader>n',
+        },
+      })
 
       local statusline = require('mini.statusline')
       statusline.setup({ use_icons = true })
