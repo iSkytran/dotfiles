@@ -60,6 +60,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set('n', '<C-s>', function() vim.cmd.w() end, { desc = 'Save' })
 vim.keymap.set({ 'i', 'x' }, '<C-s>', function() vim.cmd.w() end, { desc = 'Save and go to Normal mode' })
 
+-- Esc in terminal.
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Go to Normal mode from terminal'})
+
 -- Toggle options.
 vim.keymap.set('n', '\\b', function() vim.o.bg = vim.o.bg == 'dark' and 'light' or 'dark'; print(vim.o.bg) end,                        { desc = "Toggle '[b]ackground'" })
 vim.keymap.set('n', '\\c', function() vim.bo.cursorline = not vim.bo.cursorline end,                                                   { desc = "Toggle '[c]ursorline'" })
@@ -164,6 +167,7 @@ require('lazy').setup({
       end
 
       -- Telescope shortcuts.
+      map('<leader><leader>', builtin.buffers, '[ ] Find existing buffers')
       map('<leader>b', builtin.buffers, 'Find existing [b]uffers')
       map('<leader>f', builtin.find_files, 'Find [f]iles')
       map('<leader>g', builtin.live_grep, '[G]rep string')
@@ -226,7 +230,7 @@ require('lazy').setup({
 
       harpoon.setup()
       vim.keymap.set('n', '<leader>a', function() harpoon:list():append() end, { desc = '[A]ppend to harpoon list' })
-      vim.keymap.set('n', '<leader><leader>', function() toggle_telescope(harpoon:list()) end, { desc = '[ ] View harpoon items' })
+      vim.keymap.set('n', '<leader>h', function() toggle_telescope(harpoon:list()) end, { desc = 'View [h]arpoon items' })
       vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
     end,
   },
@@ -240,6 +244,7 @@ require('lazy').setup({
       require('mini.completion').setup()
       require('mini.files').setup()
       require('mini.pairs').setup()
+      require('mini.sessions').setup()
       require('mini.surround').setup({
         mappings = {
           add = '<leader>sa',
