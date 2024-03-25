@@ -63,6 +63,9 @@ vim.keymap.set({ 'i', 'x' }, '<C-s>', function() vim.cmd.w() end, { desc = 'Save
 -- Esc in terminal.
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Go to Normal mode from terminal' })
 
+-- New tab.
+vim.keymap.set('n', '<C-w>t', function() vim.fn.cmd('tabnew') end, { desc = 'New tab' })
+
 -- Toggle options.
 vim.keymap.set('n', '\\b', function()
   vim.o.bg = vim.o.bg == 'dark' and 'light' or 'dark'; print(vim.o.bg)
