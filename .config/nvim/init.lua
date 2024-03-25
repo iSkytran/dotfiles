@@ -174,8 +174,10 @@ require('lazy').setup {
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons', 'nvim-telescope/telescope-ui-select.nvim' },
     config = function(event)
+      require('telescope').load_extension('ui-select')
+
       local builtin = require('telescope.builtin')
       local map = function(keys, func, desc)
         vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
@@ -206,51 +208,6 @@ require('lazy').setup {
     end,
   },
 
-  -- For marking files.
-  {
-    'ThePrimeagen/harpoon',
-    branch = 'harpoon2',
-    dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
-    config = function()
-      local harpoon = require('harpoon')
-      local conf = require('telescope.config').values
-      local toggle_telescope = function(harpoon_files)
-        local make_finder = function()
-          local file_paths = {}
-          for _, item in ipairs(harpoon_files.items) do
-            table.insert(file_paths, item.value)
-          end
-
-          return require('telescope.finders').new_table {
-            results = file_paths,
-          }
-        end
-        require('telescope.pickers').new({}, {
-          prompt_title = 'Harpoon',
-          finder = make_finder(),
-          previewer = conf.file_previewer {},
-          sorter = conf.generic_sorter {},
-          attach_mappings = function(buffn, map)
-            map({ 'n', 'i' }, '<C-d>', function()
-              local state = require('telescope.actions.state')
-              local selection = state.get_selected_entry()
-              local current_picker = state.get_current_picker(buffn)
-
-              harpoon:list():removeAt(selection.index)
-              current_picker:refresh(make_finder())
-            end)
-            return true
-          end,
-        }):find()
-      end
-
-      harpoon.setup {}
-      vim.keymap.set('n', '<leader>a', function() harpoon:list():append() end, { desc = '[A]ppend to harpoon list' })
-      vim.keymap.set('n', '<leader>h', function() toggle_telescope(harpoon:list()) end, { desc = 'View [h]arpoon items' })
-      vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-    end,
-  },
-
   -- Mini utilities.
   {
     'echasnovski/mini.nvim',
@@ -261,6 +218,7 @@ require('lazy').setup {
       require('mini.files').setup {}
       require('mini.pairs').setup {}
       require('mini.sessions').setup {}
+      require('mini.starter').setup {}
       require('mini.surround').setup {
         mappings = {
           add = '<leader>sa',
@@ -283,6 +241,13 @@ require('lazy').setup {
       end
 
       vim.keymap.set('n', '<leader>e', function() MiniFiles.open() end, { desc = 'Open file [e]xplorer' })
+      vim.keymap.set('n', '<leader>cs', function()
+        vim.ui.input({ prompt = 'Session Name: ' },
+          function(session_name) _ = session_name and MiniSessions.write(session_name) end)
+      end, { desc = '[C]reate [s]ession' })
+      vim.keymap.set('n', '<leader>rs', function() MiniSessions.select('read') end, { desc = '[R]ead [s]ession' })
+      vim.keymap.set('n', '<leader>us', function() MiniSessions.select('write') end, { desc = '[U]pdate [s]ession' })
+      vim.keymap.set('n', '<leader>ds', function() MiniSessions.select('delete') end, { desc = '[D]elete [s]ession' })
     end,
   },
 
