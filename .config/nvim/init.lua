@@ -214,7 +214,9 @@ require('lazy').setup {
     config = function()
       require('mini.ai').setup {}
       require('mini.comment').setup {}
-      require('mini.completion').setup {}
+      require('mini.completion').setup {
+        fallback_action = function() end,
+      }
       require('mini.files').setup {}
       require('mini.pairs').setup {}
       require('mini.sessions').setup {}
