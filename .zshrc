@@ -27,6 +27,7 @@ plugins=(
 # Aliases
 alias config="/usr/bin/git --git-dir=$HOME/code/dotfiles/ --work-tree=$HOME"
 alias rm=trash
+alias source_idf="test_source /opt/esp-idf/export.sh"
 
 # Update Environment Variables
 export EDITOR="vim"
