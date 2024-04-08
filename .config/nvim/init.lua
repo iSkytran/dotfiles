@@ -249,7 +249,7 @@ require('lazy').setup {
       end, { desc = '[C]reate [s]ession' })
       vim.keymap.set('n', '<leader>rs', function() MiniSessions.select('read') end, { desc = '[R]ead [s]ession' })
       vim.keymap.set('n', '<leader>us', function() MiniSessions.select('write') end, { desc = '[U]pdate [s]ession' })
-      vim.keymap.set('n', '<leader>ds', function() MiniSessions.select('delete') end, { desc = '[D]elete [s]ession' })
+      vim.keymap.set('n', '<leader>Ds', function() MiniSessions.select('delete') end, { desc = '[D]elete [s]ession' })
     end,
   },
 
