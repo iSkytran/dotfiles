@@ -6,11 +6,10 @@ config.color_scheme = 'Catppuccin Mocha'
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.font = wezterm.font('JetBrainsMono Nerd Font')
-config.font_size = 10.0
 
 config.keys = {
   {
-    key = 'Space',
+    key = 'a',
     mods = 'CTRL',
     action = wezterm.action.ActivateKeyTable {
       name = 'table_mode',
