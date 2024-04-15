@@ -184,8 +184,8 @@ require('lazy').setup {
       end
 
       -- Telescope shortcuts.
-      map('<leader><leader>', builtin.buffers, '[ ] Find existing buffers')
-      map('<leader>b', builtin.buffers, 'Find existing [b]uffers')
+      map('<leader><leader>', function() builtin.buffers({ sort_lastused = true, ignore_current_buffer = true }) end, '[ ] Find existing buffers')
+      map('<leader>b', '<leader><leader>', 'Find existing [b]uffers')
       map('<leader>f', builtin.find_files, 'Find [f]iles')
       map('<leader>g', builtin.live_grep, '[G]rep string')
 
