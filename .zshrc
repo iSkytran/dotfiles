@@ -13,7 +13,7 @@ plugins=(
     docker
     docker-compose
     extract
-	git
+    git
     git-auto-fetch
     man
     pip
@@ -33,8 +33,9 @@ alias source_idf="test_source /opt/esp-idf/export.sh"
 export EDITOR="vim"
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
-# Activate Starship Prompt
+# Activate Other Plugins
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 # Source Plugins
 test_source $ZSH/oh-my-zsh.sh
