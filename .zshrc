@@ -3,8 +3,6 @@ function test_source {
     test -f "$1" && source "$1"
 }
 
-export ZSH="/usr/share/oh-my-zsh"
-
 plugins=(
     archlinux
     copyfile
@@ -38,11 +36,8 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # Source Plugins
-test_source $ZSH/oh-my-zsh.sh
 test_source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 test_source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Virtual Environments
-export WORKON_HOME=~/.virtualenvs
-test_source /usr/bin/virtualenvwrapper_lazy.sh
 test_source /usr/share/nvm/init-nvm.sh
