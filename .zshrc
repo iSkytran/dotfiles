@@ -30,7 +30,7 @@ alias rm=trash
 alias source_idf="test_source /opt/esp-idf/export.sh"
 
 # Update Environment Variables
-export EDITOR="vim"
+export EDITOR="nvim"
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
 # Activate Other Plugins
